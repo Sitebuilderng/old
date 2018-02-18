@@ -13,7 +13,8 @@ $mysql_server = "localhost";
 /* 
 	Enter the primary domain for this server. This can be a generic domain or subdomain that you use to identify and view this server. Enter it without http:// and without a trailing slash. 
 */
-$primaryDomain = "app.sitebuilder.com.ng";
+//$primaryDomain = "app.sitebuilder.com.ng";
+$primaryDomain = "mysitebuilder.com.ng";
 
 
 
