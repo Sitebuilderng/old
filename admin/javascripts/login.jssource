@@ -1,0 +1,235 @@
+function showButtons () {
+	//$("#loginButtonEmailOnly,#loginButton").hide();
+	if ($("#resetPassC").is(":checked")) {
+		if ($("#usernameInput").val()!="" ) {
+			//$("#loginButtonEmailOnly").show();
+		}
+	} else {
+		if ($("#usernameInput").val()!="" &&  $("#passwordInput").val()!="") {
+			//$("#loginButton").show()	
+		}
+		
+	}
+}
+function createCookie(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+
+
+function error (errorNumber) {
+	$(".messageText").hide();
+	$("#error"+errorNumber).show();
+	$("#error").css("top","-80px").fadeIn(200).animate({top:"20px"});
+}
+function success (errorNumber) {
+	$(".messageText").hide();
+	$("#success"+errorNumber).show();
+	$("#success").css("top","-80px").fadeIn(200).animate({top:"20px"});
+}
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
+var pwreal="";
+$(document).ready(function(){
+	var m = getQueryVariable("m");
+	
+	if (m) {
+		if (m=="7"||m=="8"||m=="11") {
+			success(m);
+		} else {
+			error(m);
+		}
+	}
+	setTimeout(function() {
+		$("#LoginForm").hide();
+		$("#timedOut").show();
+		setTimeout(function() {
+			window.location.href="/admin/login.php";
+		}, 5000);
+	}, 300000);
+	$("#dragBoundry").click(function(){
+		$("#error,#success").fadeOut(200);
+	});
+	$("#success,#overlay,#saved,#error,#message,#newConvo").click(function(){
+		$("#error,#success").fadeOut(200);
+
+	});
+	$("#success").click(function(){
+		$(".usr").focus();
+	});
+	$(".toggleLabelValue").focus(function(){
+		$(this).parents(".imageContextEditFieldset").addClass("focus");
+	});
+	$(".toggleLabelValue").blur(function(){
+		$(this).parents(".imageContextEditFieldset").removeClass("focus");
+		if ($(this).val()!="") {
+			$(this).parents(".imageContextEditFieldset").removeClass("showingLabel");
+		} else {
+			$(this).parents(".imageContextEditFieldset").addClass("showingLabel");
+		}
+		showButtons();
+
+	});
+	$(".toggleLabelValue").keyup(function(e){
+		if ($(this).val()!="") {
+			$(this).parents(".imageContextEditFieldset").removeClass("showingLabel");
+			
+		} else {
+			$(this).parents(".imageContextEditFieldset").addClass("showingLabel");
+			
+		}
+		showButtons();
+
+	});
+	$(".toggleLabelValue").keydown(function(e){
+	    if (!e.metaKey && !e.ctrlKey && !e.altKey && !e.shiftKey && e.keyCode!=8 ) {
+			$(this).parents(".imageContextEditFieldset").removeClass("showingLabel");
+			showButtons();
+		}
+	});
+	$(".toggleLabelValue").keypress(function(e){
+		if (e.keyCode==13) {
+			$("#LoginForm").submit();
+			return false;
+		}
+	});
+	$(".toggleLabelValue").bind("input propertychange",function(){
+		if ($(this).val()!="") {
+			$(this).parents(".imageContextEditFieldset").removeClass("showingLabel");
+			showButtons();	
+		}
+	});
+
+//	$("#LoginForm").append("<label>Login:</label><input type=\"text\" name=\"username\" value=\"\" class=\"input usr\"/><label>Pass:</label><input type=\"password\" name=\"password\" value=\"\" class=\"input\"/><input type=\"image\" src=\"graphics/login-light.png\" id=\"login\"/>");
+	$("#loginButton").click(function(){ 
+		$("#LoginForm").submit();
+	});
+	$("#createButton").click(function(){ 
+		$("#CreateForm").submit();
+		return false;
+	});
+	$("#loginButtonEmailOnly").click(function(){ 
+		$("#resetInput").val("yes");
+		//$("#passwordFieldset").slideUp(200);
+		$("#LoginForm").submit();
+	});
+	$("#keepLoggedIn").click(function(){
+		if ($(this).hasClass("checked")) {
+			$(this).removeClass("checked");
+			$("#persistentLogin").val("no");
+		} else {
+			$(this).addClass("checked");
+			$("#persistentLogin").val("yes");
+		}
+	});
+	$("#LoginForm").submit(function(){
+		$("#error,#success").fadeOut();
+		pwhash = hex_hmac_sha1(hex_hmac_sha1($("input[name=password]",$(this)).val(),$("#saltInput").val()),$("#timestampInput").val());
+		$("#hashInput").val(pwhash);
+		pwreal = $("input[name=password]",$(this)).val();
+		$("input[name=password]",$(this)).val("");
+
+		//$("#LoginForm").css("visibility","hidden");
+		function showResponse (responseText, statusText) {
+			if (responseText=="ok") {
+				if ($("#loginWrapper").offset().top==0) {
+					$("#LoginForm").fadeOut();
+					window.location.href="/admin/";
+				} else {
+
+					$("#loginWrapper").animate({top:0,marginTop:"0px"},300);
+					var h = $("#dragBoundry").height();
+					h=h-140;
+					var w = $("#dragBoundry").width();
+					w=w-60;
+					$("#loginWrapperInner").animate({width:w+"px",height:h+"px"},300)
+					$("#LoginForm").fadeOut(300,function(){
+						window.location.href="/admin/";
+					});
+				}
+					
+
+			} else {
+				$("#resetInput").val("no");
+				if (pwreal!="") {
+					$("input[name=password]",$("#LoginForm")).val(pwreal);
+					$("input[name=password]",$("#LoginForm")).parents(".imageContextEditFieldset").removeClass("showingLabel");
+					showButtons();	
+				}
+				
+				if (responseText=="7"||responseText=="8") {
+					success(responseText);
+				} else {
+					error(responseText);
+				}
+			}
+		}
+		var options = { 
+	        success:       showResponse
+	    };
+	    $(this).ajaxSubmit(options);
+		return false;
+	});
+	if ($("#CreateForm").length) {
+		$("#CreateForm input[name=password2]").keypress(function(e){
+			if (e.keyCode==13) {
+				$("#CreateForm").submit();				
+			}
+		});
+	}
+	$("#resetPassC").change(function(){
+		showButtons();
+		if ($(this).is(":checked")) {
+			$("#passwordFieldset").slideUp(200);
+			$("#usernameInput").focus();
+		} else {
+			$("#passwordFieldset").slideDown(200);
+		}
+	});
+	$("#CreateForm").submit(function(){
+		$(".error").removeClass("error");
+		if ($("input[name=password]",$(this)).val()==""||$("input[name=password2]",$(this)).val()==""||$("input[name=username]",$(this)).val()=="") {
+			error("9");
+			$("input[type=text][value=],input[type=password][value=]").parents(".imageContextEditFieldset").addClass("error");
+			return false;
+		}
+		if ($("input[name=password]",$(this)).val()==$("input[name=password2]",$(this)).val()) {
+			
+			var pwhash = hex_hmac_sha1($("input[name=password]",$(this)).val(),$("#saltInput").val());
+			$("input[name=hash]",$(this)).val(pwhash);
+			$("input[name=password]",$(this)).val("");
+			$("input[name=password2]",$(this)).val("");			
+
+		} else {
+			error("10");
+			$("input[type=password][value=]").parents(".imageContextEditFieldset").addClass("error");
+
+			return false;
+		}
+	});
+	$(".usr").focus();
+}); 

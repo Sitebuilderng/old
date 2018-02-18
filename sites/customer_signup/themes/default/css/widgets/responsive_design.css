@@ -1,0 +1,19 @@
+#responsiveDesign {
+	margin-bottom: 30px;
+}
+#responsiveDesign h4 {
+	text-align: center;
+	color:#555;
+	font-size: 30px;
+}
+#responsiveDesign h4:before {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: "setseedcom";
+	content:"t";
+	display: inline-block;
+	font-size: 40px;
+	line-height: 30px;
+	margin:0 10px 0 0;
+	color:#00BFFE;
+}

@@ -1,0 +1,11 @@
+<?php
+//cron_payment_reminder.php
+$domain = "www.sitebuilder.com.ng";
+
+$url = "http://".$domain."/my-sites/?paymentemails_kerw324ew=true"; // Change this value and then update it in SetSeed_Website_Builder_Account.tpl on line 63, just to stop other users adding undue load to your server.
+
+$c=curl_init($url);
+curl_setopt($c,CURLOPT_RETURNTRANSFER,1);
+$r=curl_exec($c);
+	
+?>

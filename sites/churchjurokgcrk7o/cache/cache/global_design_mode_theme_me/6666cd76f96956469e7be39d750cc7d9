@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+
+	<title>Welcome to our Church! - </title>
+	<meta name="description" content="Welcome to our Church! - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac ultrices ipsum. In hac habitasse platea dictumst. Quisque a dictum dolor. Donec ut nisi sed lectus gravida mattis tristique id lacus. Proin accumsan cursus sollicitudin. Sed imperdiet ligula erat, sed tincidunt ipsum tincidunt vitae. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."/>
+	<meta property="og:title" content="" />
+	<meta property="og:type" content="article" />
+	<meta property="og:image" content="http://church.app.sitebuilder.com.ng/images/slide-1.jpg" />
+		<meta property="og:description" content=" -  - " />
+	<meta property="og:site_name" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:description" content=" -  - " />
+	<meta name="twitter:image" content="http://church.app.sitebuilder.com.ng/images/slide-1.jpg" />
+	
+							
+		
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<script src="/javascripts/cache-1500442552.js"></script> 
+	<link rel="stylesheet" href="/css/cache-1500237207.css" type="text/css" /> 
+	<link rel="stylesheet" href="/css/print.css" type="text/css" media="print" />
+
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+	<![endif]-->
+
+		
+
+	
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,300,300italic,700italic%7CMuli:400,300italic,300,400italic%7COrbitron:400,500,700%7C' rel='stylesheet' type='text/css'>
+<style type="text/css" >
+.hr {
+		border-bottom: 3px solid #ddd;
+	}
+.inverted .hr {
+		border-bottom: 3px solid #ccc;
+	}
+h1 {
+	font-family: 'Open Sans', sans-serif;
+	font-size:26px;
+	font-weight:300;
+	color:#000
+}
+#header_bar_1 h1 {
+				}
+#header_bar_2 h1 {
+			font-family: 'Orbitron', sans-serif;
+				font-size:80px;
+					color:#8f7655;
+	}
+#header_bar_3 h1 {
+				}
+#content_bar_1 h1 {
+				}
+#content_bar_2 h1 {
+				}
+#content_bar_3 h1 {
+						color:#8f7655;
+	}
+#content_bar_4 h1 {
+				}
+#content_bar_5 h1 {
+				}
+#content_bar_6 h1 {
+				}
+#content_bar_7 h1 {
+				}
+#footer_bar_1 h1 {
+				}
+#footer_bar_2 h1 {
+				}
+#footer_bar_3 h1 {
+				}
+
+
+h2 {
+	font-family: 'Open Sans', sans-serif;
+	font-size:22px;
+	font-weight:400;
+	color:#666
+}
+#header_bar_1 h2 {
+				}
+#header_bar_2 h2 {
+				}
+#header_bar_3 h2 {
+				}
+#content_bar_1 h2 {
+				}
+#content_bar_2 h2 {
+				}
+#content_bar_3 h2 {
+				}
+#content_bar_4 h2 {
+				}
+#content_bar_5 h2 {
+				}
+#content_bar_6 h2 {
+				}
+#content_bar_7 h2 {
+				}
+#footer_bar_1 h2 {
+				}
+#footer_bar_2 h2 {
+				}
+#footer_bar_3 h2 {
+				}
+
+h3 {
+	font-family: 'Open Sans', sans-serif;
+	font-size:20px;
+	font-weight:400;
+	color:#444444
+}
+#header_bar_1 h3 {
+				}
+#header_bar_2 h3 {
+				}
+#header_bar_3 h3 {
+				}
+#content_bar_1 h3 {
+				}
+#content_bar_2 h3 {
+				}
+#content_bar_3 h3 {
+				}
+#content_bar_4 h3 {
+				}
+#content_bar_5 h3 {
+				}
+#content_bar_6 h3 {
+				}
+#content_bar_7 h3 {
+				}
+#footer_bar_1 h3 {
+				}
+#footer_bar_2 h3 {
+				}
+#footer_bar_3 h3 {
+				}
+
+
+h4 {
+	font-family: 'Open Sans', sans-serif;
+	font-size:19px;
+	font-weight:400;
+	color:#444444
+}
+#header_bar_1 h4 {
+				}
+#header_bar_2 h4 {
+				}
+#header_bar_3 h4 {
+				}
+#content_bar_1 h4 {
+				}
+#content_bar_2 h4 {
+				}
+#content_bar_3 h4 {
+				}
+#content_bar_4 h4 {
+				}
+#content_bar_5 h4 {
+				}
+#content_bar_6 h4 {
+				}
+#content_bar_7 h4 {
+				}
+#footer_bar_1 h4 {
+				}
+#footer_bar_2 h4 {
+				}
+#footer_bar_3 h4 {
+				}
+
+
+p,td,div,th,label,li,p a,li a {
+	font-family: 'Open Sans', sans-serif;
+	font-size:18px;
+	font-weight:400;
+	color:#000
+}
+#header_bar_1 p,#header_bar_1 td,#header_bar_1 div,#header_bar_1 th,#header_bar_1 label,#header_bar_1 li,#header_bar_1 p a,#header_bar_1 li a {
+				}
+#header_bar_2 p,#header_bar_2 td,#header_bar_2 div,#header_bar_2 th,#header_bar_2 label,#header_bar_2 li,#header_bar_2 p a,#header_bar_2 li a {
+			font-family: 'Muli', sans-serif;
+				font-size:26px;
+				font-weight:600;
+				color:#FFFFFF
+	}
+#header_bar_3 p,#header_bar_3 td,#header_bar_3 div,#header_bar_3 th,#header_bar_3 label,#header_bar_3 li,#header_bar_3 p a,#header_bar_3 li a {
+				}
+#content_bar_1 p,#content_bar_1 td,#content_bar_1 div,#content_bar_1 th,#content_bar_1 label,#content_bar_1 li,#content_bar_1 p a,#content_bar_1 li a{
+				}
+#content_bar_2 p,#content_bar_2 td,#content_bar_2 div,#content_bar_2 th,#content_bar_2 label,#content_bar_2 li,#content_bar_2 p a,#content_bar_2 li a {
+				}
+#content_bar_3 p,#content_bar_3 td,#content_bar_3 div,#content_bar_3 th,#content_bar_3 label,#content_bar_3 li,#content_bar_3 p a,#content_bar_3 li a {
+				}
+#content_bar_4 p,#content_bar_4 td,#content_bar_4 div,#content_bar_4 th,#content_bar_4 label,#content_bar_4 li,#content_bar_4 p a,#content_bar_4 li a {
+				}
+#content_bar_5 p,#content_bar_5 td,#content_bar_5 div,#content_bar_5 th,#content_bar_5 label,#content_bar_5 li,#content_bar_5 p a,#content_bar_5 li a {
+				}
+#content_bar_6 p,#content_bar_6 td,#content_bar_6 div,#content_bar_6 th,#content_bar_6 label,#content_bar_6 li,#content_bar_6 p a,#content_bar_6 li a {
+				}
+#content_bar_7 p,#content_bar_7 td,#content_bar_7 div,#content_bar_7 th,#content_bar_7 label,#content_bar_7 li,#content_bar_7 p a,#content_bar_7 li a {
+				}
+#footer_bar_1 p,#footer_bar_1 td,#footer_bar_1 div,#footer_bar_1 th,#footer_bar_1 label,#footer_bar_1 li,#footer_bar_1 p a,#footer_bar_1 li a {
+				}
+#footer_bar_2 p,#footer_bar_2 td,#footer_bar_2 div,#footer_bar_2 th,#footer_bar_2 label,#footer_bar_2 li,#footer_bar_2 p a,#footer_bar_2 li a {
+				}
+#footer_bar_3 p,#footer_bar_3 td,#footer_bar_3 div,#footer_bar_3 th,#footer_bar_3 label,#footer_bar_3 li,#footer_bar_3 p a,#footer_bar_3 li a {
+				}
+
+.nav li ul,.nav > ul > li:hover > a,.nav > ul > li.hover-preview > a {
+	background-color:#FFFFFF;
+	color:#000;
+}
+
+#header_bar_1 .nav li ul,#header_bar_1 .nav > ul > li.hover-preview > a {
+		}
+#header_bar_2 .nav > ul > li:hover > a,#header_bar_2 .nav > ul > li.hover-preview > a {
+				
+		color:#FFFFFF;
+	}
+#header_bar_3 .nav > ul > li:hover > a,#header_bar_3 .nav > ul > li.hover-preview > a {
+		}
+#content_bar_1 .nav > ul > li:hover > a,#content_bar_1 .nav > ul > li:hover > a{
+		}
+#content_bar_2 .nav > ul > li:hover > a,#content_bar_2 .nav > ul > li:hover > a {
+		}
+#content_bar_3 .nav > ul > li:hover > a,#content_bar_3 .nav > ul > li:hover > a {
+		}
+#content_bar_4 .nav > ul > li:hover > a,#content_bar_4 .nav > ul > li:hover > a {
+		}
+#content_bar_5 .nav > ul > li:hover > a,#content_bar_5 .nav > ul > li:hover > a {
+		}
+#footer_bar_1 .nav > ul > li:hover > a,#footer_bar_1 .nav > ul > li:hover > a {
+		}
+#footer_bar_2 .nav > ul > li:hover > a,#footer_bar_2 .nav > ul > li:hover > a {
+		}
+#footer_bar_3 .nav > ul > li:hover > a,#footer_bar_3 .nav > ul > li:hover > a {
+		}
+
+
+.nav li ul li a  {
+	color:#000;
+}
+
+#header_bar_1 .nav li ul li a {
+	}
+#header_bar_2 .nav li ul li a {
+			
+		color:#FFFFFF;
+	}
+#header_bar_3 .nav li ul li a {
+	}
+#content_bar_1 .nav li ul li a {
+	}
+#content_bar_2 .nav li ul li a {
+	}
+#content_bar_3 .nav li ul li a {
+	}
+#content_bar_4 .nav li ul li a {
+	}
+#content_bar_5 .nav li ul li a {
+	}
+#content_bar_6 .nav li ul li a {
+	}
+#content_bar_7 .nav li ul li a {
+	}
+#footer_bar_1 .nav li ul li a {
+	}
+#footer_bar_2 .nav li ul li a {
+	}
+#footer_bar_3 .nav li ul li a {
+	}
+
+p.button a,p.Button_Small a,p.Button_Medium a,p.Button_Large a,button,input[type="submit"],input[type="reset"],input[type="button"]  {
+	color:#FFFFFF;
+	background:#444444;
+}
+.expand-box-title:before {
+	color:#444444;
+}
+#header_bar_1 p.button a,#header_bar_1 p.Button_Small a,#header_bar_1 p.Button_Medium a,#header_bar_1 p.Button_Large a,#header_bar_1 button,#header_bar_1 input[type="submit"],#header_bar_1 input[type="reset"],#header_bar_1 input[type="button"] {
+				
+}
+#header_bar_1 .expand-box-title:before {
+	}
+#header_bar_2 p.button a,#header_bar_2 p.Button_Small a,#header_bar_2 p.Button_Medium a,#header_bar_2 p.Button_Large a,#header_bar_2 button,#header_bar_2 input[type="submit"],#header_bar_2 input[type="reset"],#header_bar_2 input[type="button"] {
+			
+}
+#header_bar_2 .expand-box-title:before {
+	}
+#header_bar_3 p.button a,#header_bar_3 p.Button_Small a,#header_bar_3 p.Button_Medium a,#header_bar_3 p.Button_Large a,#header_bar_3 button,#header_bar_3 input[type="submit"],#header_bar_3 input[type="reset"],#header_bar_3 input[type="button"] {
+			
+}
+#header_bar_3 .expand-box-title:before {
+	}
+#content_bar_1 p.button a,#content_bar_1 p.Button_Small a,#content_bar_1 p.Button_Medium a,#content_bar_1 p.Button_Large a,#content_bar_1 button,#content_bar_1 input[type="submit"],#content_bar_1 input[type="reset"],#content_bar_1 input[type="button"] {
+		}
+#content_bar_1 .expand-box-title:before {
+	}
+#content_bar_2 p.button a,#content_bar_2 p.Button_Small a,#content_bar_2 p.Button_Medium a,#content_bar_2 p.Button_Large a,#content_bar_2 button,#content_bar_2 input[type="submit"],#content_bar_2 input[type="reset"],#content_bar_2 input[type="button"] {
+		}
+#content_bar_2 .expand-box-title:before {
+	}
+#content_bar_3 p.button a,#content_bar_3 p.Button_Small a,#content_bar_3 p.Button_Medium a,#content_bar_3 p.Button_Large a,#content_bar_3 button,#content_bar_3 input[type="submit"],#content_bar_3 input[type="reset"],#content_bar_3 input[type="button"] {
+		}
+#content_bar_3 .expand-box-title:before {
+	}
+#content_bar_4 p.button a,#content_bar_4 p.Button_Small a,#content_bar_4 p.Button_Medium a,#content_bar_4 p.Button_Large a,#content_bar_4 button,#content_bar_4 input[type="submit"],#content_bar_4 input[type="reset"],#content_bar_4 input[type="button"] {
+		}
+#content_bar_4 .expand-box-title:before {
+	}
+#content_bar_5 p.button a,#content_bar_5 p.Button_Small a,#content_bar_5 p.Button_Medium a,#content_bar_5 p.Button_Large a,#content_bar_5 button,#content_bar_5 input[type="submit"],#content_bar_5 input[type="reset"],#content_bar_5 input[type="button"] {
+		}
+#content_bar_5 .expand-box-title:before {
+	}
+#content_bar_6 p.button a,#content_bar_6 p.Button_Small a,#content_bar_6 p.Button_Medium a,#content_bar_6 p.Button_Large a,#content_bar_6 button,#content_bar_6 input[type="submit"],#content_bar_6 input[type="reset"],#content_bar_6 input[type="button"] {
+		}
+#content_bar_6 .expand-box-title:before {
+	}
+#content_bar_7 p.button a,#content_bar_7 p.Button_Small a,#content_bar_7 p.Button_Medium a,#content_bar_7 p.Button_Large a,#content_bar_7 button,#content_bar_7 input[type="submit"],#content_bar_7 input[type="reset"],#content_bar_7 input[type="button"] {
+		}
+#content_bar_7 .expand-box-title:before {
+	}
+#footer_bar_1 p.button a,#footer_bar_1 p.Button_Small a,#footer_bar_1 p.Button_Medium a,#footer_bar_1 p.Button_Large a,#footer_bar_1 button,#footer_bar_1 input[type="submit"],#footer_bar_1 input[type="reset"],#footer_bar_1 input[type="button"] {
+		}
+#footer_bar_1 .expand-box-title:before {
+	}
+#footer_bar_2 p.button a,#footer_bar_2 p.Button_Small a,#footer_bar_2 p.Button_Medium a,#footer_bar_2 p.Button_Large a,#footer_bar_2 button,#footer_bar_2 input[type="submit"],#footer_bar_2 input[type="reset"],#footer_bar_2 input[type="button"] {
+		}
+#footer_bar_2 .expand-box-title:before {
+	}
+#footer_bar_3 p.button a,#footer_bar_3 p.Button_Small a,#footer_bar_3 p.Button_Medium a,#footer_bar_3 p.Button_Large a,#footer_bar_3 button,#footer_bar_3 input[type="submit"],#footer_bar_3 input[type="reset"],#footer_bar_3 input[type="button"] {
+		}
+#footer_bar_3 .expand-box-title:before {
+	}
+
+
+.inverted h1 {
+	color:#FFFFFF
+}
+
+.inverted h2 {
+	color:#FFFFFF
+}
+
+
+.inverted h3 {
+	color:#FFFFFF
+}
+
+
+.inverted h4 {
+	color:#FFFFFF
+}
+
+
+.inverted p,.inverted td,.inverted div,.inverted th,.inverted label,.inverted.content li,.inverted li,.inverted p a,.inverted.content li a,.inverted li a {
+	color:#FFFFFF
+}
+#header_bar_1.inverted p,#header_bar_1.inverted td,#header_bar_1.inverted div,#header_bar_1.inverted th,#header_bar_1.inverted label,#header_bar_1.inverted.content li,#header_bar_1.inverted li,#header_bar_1.inverted p a,#header_bar_1.inverted.content li a,#header_bar_1.inverted li a {
+}
+#header_bar_2.inverted p,#header_bar_2.inverted td,#header_bar_2.inverted div,#header_bar_2.inverted th,#header_bar_2.inverted label,#header_bar_2.inverted.content li,#header_bar_2.inverted li,#header_bar_2.inverted p a,#header_bar_2.inverted.content li a,#header_bar_2.inverted li a {
+}
+#header_bar_3.inverted p,#header_bar_3.inverted td,#header_bar_3.inverted div,#header_bar_3.inverted th,#header_bar_3.inverted label,#header_bar_3.inverted.content li,#header_bar_3.inverted li,#header_bar_3.inverted p a,#header_bar_3.inverted.content li a,#header_bar_3.inverted li a {
+}
+#content_bar_1.inverted p,#content_bar_1.inverted td,#content_bar_1.inverted div,#content_bar_1.inverted th,#content_bar_1.inverted label,#content_bar_1.inverted.content li,#content_bar_1.inverted li,#content_bar_1.inverted p a,#content_bar_1.inverted.content li a,#content_bar_1.inverted li a {
+}
+#content_bar_2.inverted p,#content_bar_2.inverted td,#content_bar_2.inverted div,#content_bar_2.inverted th,#content_bar_2.inverted label,#content_bar_2.inverted.content li,#content_bar_2.inverted li,#content_bar_2.inverted p a,#content_bar_2.inverted.content li a,#content_bar_2.inverted li a {
+}
+#content_bar_3.inverted p,#content_bar_3.inverted td,#content_bar_3.inverted div,#content_bar_3.inverted th,#content_bar_3.inverted label,#content_bar_3.inverted.content li,#content_bar_3.inverted li,#content_bar_3.inverted p a,#content_bar_3.inverted.content li a,#content_bar_3.inverted li a {
+}
+#content_bar_4.inverted p,#content_bar_4.inverted td,#content_bar_4.inverted div,#content_bar_4.inverted th,#content_bar_4.inverted label,#content_bar_4.inverted.content li,#content_bar_4.inverted li,#content_bar_4.inverted p a,#content_bar_4.inverted.content li a,#content_bar_4.inverted li a {
+}
+#content_bar_5.inverted p,#content_bar_5.inverted td,#content_bar_5.inverted div,#content_bar_5.inverted th,#content_bar_5.inverted label,#content_bar_5.inverted.content li,#content_bar_5.inverted li,#content_bar_5.inverted p a,#content_bar_5.inverted.content li a,#content_bar_5.inverted li a {
+}
+#content_bar_6.inverted p,#content_bar_6.inverted td,#content_bar_6.inverted div,#content_bar_6.inverted th,#content_bar_6.inverted label,#content_bar_6.inverted.content li,#content_bar_6.inverted li,#content_bar_6.inverted p a,#content_bar_6.inverted.content li a,#content_bar_6.inverted li a {
+}
+#content_bar_7.inverted p,#content_bar_7.inverted td,#content_bar_7.inverted div,#content_bar_7.inverted th,#content_bar_7.inverted label,#content_bar_7.inverted.content li,#content_bar_7.inverted li,#content_bar_7.inverted p a,#content_bar_7.inverted.content li a,#content_bar_7.inverted li a {
+}
+#footer_bar_1.inverted p,#footer_bar_1.inverted td,#footer_bar_1.inverted div,#footer_bar_1.inverted th,#footer_bar_1.inverted label,#footer_bar_1.inverted.content li,#footer_bar_1.inverted li,#footer_bar_1.inverted p a,#footer_bar_1.inverted.content li a,#footer_bar_1.inverted li a {
+}
+#footer_bar_2.inverted p,#footer_bar_2.inverted td,#footer_bar_2.inverted div,#footer_bar_2.inverted th,#footer_bar_2.inverted label,#footer_bar_2.inverted.content li,#footer_bar_2.inverted li,#footer_bar_2.inverted p a,#footer_bar_2.inverted.content li a,#footer_bar_2.inverted li a {
+}
+#footer_bar_3.inverted p,#footer_bar_3.inverted td,#footer_bar_3.inverted div,#footer_bar_3.inverted th,#footer_bar_3.inverted label,#footer_bar_3.inverted.content li,#footer_bar_3.inverted li,#footer_bar_3.inverted p a,#footer_bar_3.inverted.content li a,#footer_bar_3.inverted li a {
+}
+
+
+.inverted p.button a,.inverted p.Button_Small a,.inverted p.Button_Medium a,.inverted p.Button_Large a {
+			
+		background:#FFFFFF;	
+				
+		color:#444444;		
+
+	}
+.inverted .expand-box-title:before {
+			
+		color:#FFFFFF;
+	}
+.inverted .expand-box  {
+	border-top:1px solid rgba(255,255,255,0.2);
+	border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+
+
+#content_bar_1 .disclosure-reveal {
+	background-color:rgba(255,255,255,0.6);
+}
+#content_bar_2 .disclosure-reveal {
+	background-color:rgba(255,255,255,0.6);
+}
+#content_bar_3 .disclosure-reveal {
+	background-color:rgba(255,255,255,0.6);
+}
+#content_bar_4 .disclosure-reveal {
+	background-color:rgba(255,255,255,0.6);
+}
+#content_bar_5 .disclosure-reveal {
+	background-color:rgba(255,255,255,0.6);
+}
+#content_bar_6 .disclosure-reveal {
+	background-color:rgba(255,255,255,0.6);
+}
+#content_bar_7 .disclosure-reveal {
+	background-color:rgba(255,255,255,0.6);
+}
+
+</style>
+
+<meta name="disablelivechat" content="disabled" /></head>
+
+<body class="   homepage page_home parent_ top_parent_ page_id_26 ">
+<script type="text/javascript">
+	document.body.className += " jsLoading";
+</script>
+		<div id="header">
+
+			
+								
+			<style type="text/css" media="screen">
+				#header_bar_1 {
+				background-color:#FFFFFF;
+								}
+			</style>
+			<div class="container  				"
+					id="header_bar_1"
+																																		data-background-fade="1000"
+					data-background-panzoom="0"
+					data-background-duration="5000"
+					data-background-color="#FFFFFF"
+					data-background-opacity="1"
+																													>
+				
+
+								<div class="row clearfix flexibreak-big" data-flexibreak-small="header_bar_1-small" >
+
+																					
+																																																																						
+																														
+
+
+
+																					
+																																																		
+																																																		
+
+					
+										    <div id="branding"  class="module clearfix align-center clear-  valign- logo-module ">
+	<a href="/" ><img src="/images/themegraphics/1500528255header_bar_1_logo2.png" alt=""/></a>
+</div>
+					
+										
+																														
+
+				</div>
+
+				<div id="header_bar_1-small" class="flexibreak-small">
+						
+																		
+																																																
+
+																		
+
+
+																														
+
+
+
+						
+																																																
+
+
+																		
+																														
+
+						
+													<div class="row clearfix">
+						    <div id="branding"  class="module clearfix align-center clear-  valign- logo-module ">
+	<a href="/" ><img src="/images/themegraphics/1500528255header_bar_1_logo2.png" alt=""/></a>
+</div>
+							</div>
+						
+						
+						
+
+																														
+				</div>
+								
+			</div>		
+	
+
+	
+								
+			<style type="text/css" media="screen">
+				#header_bar_2 {
+				background-color:#8f7655;
+								}
+			</style>
+			<div class="container hide-in-fixed 				ontop"
+					id="header_bar_2"
+																																		data-background-fade="1000"
+					data-background-panzoom="0"
+					data-background-duration="5000"
+					data-background-color="#8f7655"
+					data-background-opacity="1"
+																													>
+				
+
+								<div class="row clearfix flexibreak-big" data-flexibreak-small="header_bar_2-small" >
+
+																					
+																																																																						
+																														
+
+
+
+																					
+																																																		
+																																																		
+
+					
+					
+										
+					
+																									<div class="module clearfix nav  search-none basket-none  align-center    ">
+	<ul class="flexibreak-container contains-text clearfix">
+		
+				
+				
+		
+						
+				
+		<li class="   " data-page-id="30"><a href="/offerings/" title="Offerings" >Offerings</a>
+			 </li>
+				
+				
+		<li class="current  second-half " data-page-id="26"><a href="/" title="Home" >Home</a>
+			 </li>
+				
+				
+		<li class="  second-half " data-page-id="27"><a href="/services/" title="Services" >Services</a>
+			 </li>
+				
+		
+		
+				
+	</ul>
+</div>
+
+		
+		
+																																				
+
+				</div>
+
+				<div id="header_bar_2-small" class="flexibreak-small">
+						
+																			<div class="row clearfix">
+								<div class="clearfix module mobile-menu align-center  style style-reveal-left   ">
+<p><a href="#header">Menu</a></p>
+</div>
+							</div>
+												
+																																																
+
+																		
+
+
+																														
+
+
+
+						
+																																																
+
+
+																		
+																														
+
+						
+						
+						
+						
+
+																														
+				</div>
+								
+			</div>		
+	
+
+
+		
+	</div>
+	
+
+	
+	<main id="main" tabindex="-1">
+
+																				
+			<style type="text/css" media="screen">
+#content_bar_1_banner_slideshow {
+	background-color:#FFFFFF;
+	}
+</style>
+
+<div class="container content   nopadding "
+	
+	id="content_bar_1_banner_slideshow"
+										data-background-fade="1000"
+	data-background-panzoom=""	
+	data-background-duration="5000"
+	data-background-color="#FFFFFF"
+	data-background-opacity=""
+						data-slideshow-speed="3000"
+			data-slideshow-style="false"
+		>
+	<div class="clearfix module content-block align-   valign-   " >
+	<div>
+	<div class="banner-feature inverted" data-backgrounds="[&quot;\/images\/slide-1.jpg&quot;]">
+	<div class="banner-feature-inner banner-feature-content-middle">
+		<div class="banner-feature-content">	
+			<p style="text-align:left">... Join us in Faith</p>
+		</div>
+	</div>
+</div>
+	</div>
+</div></div>				
+		
+		
+					
+		
+
+	
+		
+	
+	
+	
+
+																		
+		
+		<style type="text/css" media="screen">
+#content_bar_3 {
+	background-color:#FFFFFF;
+	}
+</style>
+
+<div class="container content    "
+	
+	id="content_bar_3"
+										data-background-fade="1000"
+	data-background-panzoom="0"	
+	data-background-duration="5000"
+	data-background-color="#FFFFFF"
+	data-background-opacity="1"
+							>
+<section class="row clearfix" >
+	<div class="clearfix module content-block align-   valign-   " >
+	<div>
+											<h1 style="text-align:left">Welcome to our Church!</h1><p style="text-align:left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac ultrices ipsum. In hac habitasse platea dictumst. Quisque a dictum dolor. Donec ut nisi sed lectus gravida mattis tristique id lacus. Proin accumsan cursus sollicitudin. Sed imperdiet ligula erat, sed tincidunt ipsum tincidunt vitae. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+					
+				
+	</div>
+</div></section>
+</div>		
+		
+			
+	
+			
+	
+		
+	
+	</main>
+
+	
+	
+	<div id="footer">
+	
+								
+			<style type="text/css" media="screen">
+				#footer_bar_1 {
+				background-color:#363641;
+								}
+			</style>
+			<div class="container  inverted				ontop"
+					id="footer_bar_1"
+																																		data-background-fade="1000"
+					data-background-panzoom="0"
+					data-background-duration="5000"
+					data-background-color="#363641"
+					data-background-opacity="1"
+																													>
+				
+
+								<div class="row clearfix flexibreak-big" data-flexibreak-small="footer_bar_1-small" >
+
+																					
+					
+												
+						<div class="module clearfix nav  search-first basket-last  align-left valign-middle valign   ">
+	<ul class="flexibreak-container contains-text clearfix">
+		
+				<li id="nav-search" class="nav-search nav-search-first nav-search-style-">
+			<a href="#">Search</a>
+		</li>
+				
+				
+		
+						
+				
+		<li class="   " data-page-id="30"><a href="/offerings/" title="Offerings" >Offerings</a>
+			 </li>
+				
+				
+		<li class="current  second-half " data-page-id="26"><a href="/" title="Home" >Home</a>
+			 </li>
+				
+				
+		<li class="  second-half " data-page-id="27"><a href="/services/" title="Services" >Services</a>
+			 </li>
+				
+				<li id="nav-basket"><a href="/offerings">Checkout</a></li>
+		
+		
+				
+	</ul>
+</div>
+
+		
+		
+																																																																						
+																														
+
+
+
+																					
+																																									<div class="module clearfix social-links align-right valign-middle valign    ">
+	<div >
+		<p>
+								<a href="facebook.com" title="Facebook (Opens new window)" class="social-link-facebook social-link" target="_blank">Facebook</a>
+																<a href="instagram.com" title="Instagram (Opens new window)" class="social-link-instagram social-link" target="_blank">Instagram</a>
+																<span title="0800-123-1234" class="social-link-phone social-link">0800-123-1234</span>
+				
+		</p>
+	</div>
+</div>
+																				
+																																																		
+
+					
+					
+										
+																														
+
+				</div>
+
+				<div id="footer_bar_1-small" class="flexibreak-small">
+						
+																			<div class="row clearfix">
+								<div class="clearfix module mobile-menu align-center  style style-reveal-left   ">
+<p><a href="#header">Menu</a></p>
+</div>
+							</div>
+												
+																																																
+
+																		
+
+
+																														
+
+
+
+						
+																																					<div class="row clearfix">
+							<div class="module clearfix social-links align-center     ">
+	<div >
+		<p>
+								<a href="facebook.com" title="Facebook (Opens new window)" class="social-link-facebook social-link" target="_blank">Facebook</a>
+																<a href="instagram.com" title="Instagram (Opens new window)" class="social-link-instagram social-link" target="_blank">Instagram</a>
+																<span title="0800-123-1234" class="social-link-phone social-link">0800-123-1234</span>
+				
+		</p>
+	</div>
+</div>
+							</div>
+																								
+
+
+																		
+																														
+
+						
+						
+						
+						
+
+																														
+				</div>
+												<div class="row clearix" id="footer_bar_1_full_width_bottom">
+					<div class="clearfix module content-block align-left   valign-   " >
+	<div>
+	
+	</div>
+</div>				</div>
+				
+			</div>		
+	
+
+	
+
+
+		</div>
+		<div id="search-form-popdown">
+		<div class="tri"></div>
+		<form action="/actions/SearchForward/" method="post" id="searchFormSmall">
+			<input type="hidden" name="language" value="en"/>
+			<input id="navSearch" type="text" maxlength="60" title="Search" name="string" value="" required="true" placeholder="Search" />
+			<input type="submit" value="Search" class="search-form-hide-with-js"/>
+			<p id="search-form-popdown-button" class="submit_form"><a href="#">Search</a></p>
+		</form>
+	</div>
+	
+
+	<script src="/javascripts/jquery.vide.js"></script>
+
+	<script src="/javascripts/owl.carousel.min.js"></script>
+	<script src="/javascripts/backstretch.js"></script>
+	<script src="/javascripts/doubletaptogo.js"></script>
+	<script src="/javascripts/overlaps.js"></script>
+	<script src="/javascripts/countdown.js"></script>
+	<div id="mp_lightbox_outer">
+		<div id="mp_lightbox_outer_outer">
+			<div id="mp_lightbox_inner">
+				<div id="mp_lighbox_content"></div>
+				<div id="closeMP"><a href="#">Close</a></div>
+			</div>			
+		</div>
+	</div>
+	<style type="text/css">body { background-color:#363641; }</style>
+	
+</body>
+</html>

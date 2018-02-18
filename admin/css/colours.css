@@ -1,0 +1,430 @@
+/* TOP LEVEL */
+
+
+#mainWrapperObs .rightPane {
+	background: transparent;
+}
+#header {
+	background: #fff;
+} 
+.cleverFilterBar {
+	background: #fff;
+	/*border-bottom:1px solid #ccc;*/
+}/*
+.subHeaderButton
+,.subHeaderButton:hover {
+	background: #f2f2f2;
+	color:#000;
+	text-decoration: none;
+}*/
+.level1Switcher .overflowEllipsis span
+{
+	background: #B27C66;
+}
+.cleverFilterBar .target {
+	color:#000;
+}
+.cleverFilterBar .showing .target {
+	background: #ddd;
+	color:#000;
+}
+.subHeaderButton.primaryItem,.subHeaderButton.primaryItem:hover {	
+	color:#fff;
+	text-decoration: none;
+}
+.storageDraggable .assetPane .subHeaderButton.primaryItem,.storageDraggable .assetPane .subHeaderButton.primaryItem:hover {
+	background: #fff;
+	color: #444;
+}
+.reveal {
+	box-shadow: 0 0 10px #ff0 !important;
+	background: #ff0 !important;
+}
+#mainWrapperObs .showSubPages .responsiveListItemInfo {
+background: #333;	
+}
+.paneTools {
+	background: rgb(236,236,236);
+	/*background-image: url("../graphics/circles-tex.png");
+	background-size: 227.5px 116.5px;*/
+}
+
+.disabledMask {
+	background:rgba(236,236,236,0.7);
+}
+#rightPane .paneTools {
+	background: rgb(248,248,248);
+}
+#rightPane .disabledMask {
+	background:rgba(248,248,248,0.7);
+}
+
+#level1Target,#level1Target.showing {
+	color: #000;
+	background: transparent;
+
+}
+.tempTargetName {
+	color:#bbb;
+}
+/*
+.bigAssetMenu.subHeaderLeftMenuItem .target:hover:after {
+	border-top:4px solid rgba(120,178,169,0.9);
+}
+.bigAssetMenu.subHeaderLeftMenuItem .target:after {
+	border-top:4px solid rgba(120,178,169,0.6);
+}
+*/
+
+
+.listItemHighlight
+,.responsiveListItem.offline.editPageBar.listItemHighlight 
+,.responsiveListItem.offline.editPageBar.listItemHighlight .showSubPages
+,.responsiveListItem.editPageBar.listItemHighlight .showSubPages
+,.responsiveListItem.offline.listItemHighlight
+,.topBar.nonEditable
+,#mainWrapperObs #popupDialogueContentSecondary.popupDialogueImportant
+,#mainWrapperObs #popupDialogueContentPrimary.popupDialogueImportant
+,.paneToolsAction,.paneToolsAction:hover
+,#livechatFloaterHeader
+,.paneTools .paneToolsPrimary
+{
+
+background-image: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(0,0,0,0.06) 100%);
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(0,0,0,0.06)));
+background-image: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.06) 100%);
+background-image: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.06) 100%);
+background-image: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.06) 100%);
+background-image: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.06) 100%);
+
+}
+
+
+.bpe_area p.bpe_highlight
+, .bpe_area h1.bpe_highlight
+, .bpe_area h2.bpe_highlight
+, .bpe_area h3.bpe_highlight
+, .bpe_area h4.bpe_highlight
+, .bpe_area h5.bpe_highlight
+, .bpe_area pre.bpe_highlight
+, .bpe_area li.bpe_highlight
+, .bpe_area form.bpe_highlight
+/*, .bpe_area .textareaWrapper.bpe_highlight*/
+, .bpe_area .bpe_table.bpe_highlight
+
+
+ {
+ 	background-image: -moz-linear-gradient(top,  rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.9) 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.9)), color-stop(100%,rgba(255,255,255,0.9)));
+	background-image: -webkit-linear-gradient(top,  rgba(255,255,255,0.9) 0%,rgba(255,255,255,0.9) 100%);
+	background-image: -o-linear-gradient(top,  rgba(255,255,255,0.9) 0%,rgba(255,255,255,0.9) 100%);
+	background-image: -ms-linear-gradient(top,  rgba(255,255,255,0.9) 0%,rgba(255,255,255,0.9) 100%);
+	background-image: linear-gradient(to bottom,  rgba(255,255,255,0.9) 0%,rgba(255,255,255,0.9) 100%);
+ }
+/*
+.paneTools .paneToolsPrimary.secondaryAction,.paneTools .paneToolsAction {
+	background: rgb(255,255,255);
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1)));
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
+	background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );
+	color:#000;
+}
+*/
+.pagesScroll,#contentWrapper,#mainWrapperObs #settingsFlyinInner {
+	background: #e2e2e2;
+}
+#rightPane #contentWrapper {
+	background:#fff 
+}
+/* Live preivew */
+#livePreviewHeader.updated_live
+,#livePreviewHeader.live_website {
+	background: #95c53f;
+} 
+#livePreviewHeader.draft
+,#livePreviewHeader.updated_offline
+,.subHeaderButton.previewButton {
+	background:#939393;
+	position: relative;
+}
+.subHeaderButton.previewButton span {
+	color:#fff;
+	position: relative;
+	z-index: 2;
+	text-shadow:0 0 3px rgba(0,0,0,1);
+}
+.subHeaderButton.previewButton {
+	font-weight: 400;
+	
+	margin-left:10px;
+}
+#livePreviewHeader.draft:after
+,#livePreviewHeader.updated_offline:after
+,.subHeaderButton.previewButton:after {
+	content:"////////////////////////////////////////////////////////////////////////////////////////////////////////";
+	font-size:220px;
+	letter-spacing: -11px;
+	font-family: "arial bold",sans-serif;
+	font-weight: 700;
+	position: absolute;
+	top:0;
+	left: 0;
+	color: #888888;
+	z-index:1;
+	overflow: hidden;
+	height:100%;
+}
+#previewDraft,#previewUpdatedOffline {
+	color:#fff;
+	text-shadow:0 0 3px rgba(0,0,0,1);
+}
+.subHeaderButton.updateButton.unavailable {
+	color:#999;
+}
+#livePreviewHeader .subHeaderButton {
+	
+	margin:8px;
+	
+
+}
+#livePreviewHeader .subHeaderButton.updateButton {
+	
+	
+	
+	font-weight: 400;
+	color:#fff;
+	background:#dd6118;
+	/*
+	background: rgb(206,78,41);
+background: -moz-linear-gradient(top,  rgba(206,78,41,1) 0%, rgba(178,66,35,1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(206,78,41,1)), color-stop(100%,rgba(178,66,35,1)));
+background: -webkit-linear-gradient(top,  rgba(206,78,41,1) 0%,rgba(178,66,35,1) 100%);
+background: -o-linear-gradient(top,  rgba(206,78,41,1) 0%,rgba(178,66,35,1) 100%);
+background: -ms-linear-gradient(top,  rgba(206,78,41,1) 0%,rgba(178,66,35,1) 100%);
+background: linear-gradient(to bottom,  rgba(206,78,41,1) 0%,rgba(178,66,35,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ce4e29', endColorstr='#b24223',GradientType=0 );
+	*/
+}
+/* Drag Inser */
+#mainWrapperObs #dragInsert
+{
+	background: rgba(50,50,50,0.95);
+	-webkit-box-shadow:0 0 20px rgba(0,0,0,0.4);
+	-moz-box-shadow:0 0 20px rgba(0,0,0,0.4);
+	box-shadow:0 0 20px rgba(0,0,0,0.4);
+}
+#mainWrapperObs #dragInsert h2 {
+	color:#444;
+}
+/* ASSETS */
+.bigAssetMenu .target {
+	color:#4A8174;
+}
+.level2Switcher .overflowEllipsis span{
+	color:#fff;
+}
+#mainWrapperObs .assetPaneHeader
+{
+	background:#fff;
+
+}
+#mainWrapperObs.storageDraggable .assetPaneHeader {
+	background: none;
+}
+#mainWrapperObs.storageDraggable .assetPaneHeader h1,#mainWrapperObs.storageDraggable .assetPaneHeader h1 strong {
+	color:#fff;
+}
+/*
+.assetPane .listItemHighlight
+,.contentImage.imageItemHighlight .bpe_tiny_image
+,#videosPane .addVideoItem.imageItemHighlight .bpe_tiny_image
+,.thumbItem.imageItemHighlight .bpe_tiny_image {
+background: rgb(110,177,244);
+background: -moz-linear-gradient(top,  rgba(110,177,244,1) 0%, rgba(86,141,196,1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(110,177,244,1)), color-stop(100%,rgba(86,141,196,1)));
+background: -webkit-linear-gradient(top,  rgba(110,177,244,1) 0%,rgba(86,141,196,1) 100%);
+background: -o-linear-gradient(top,  rgba(110,177,244,1) 0%,rgba(86,141,196,1) 100%);
+background: -ms-linear-gradient(top,  rgba(110,177,244,1) 0%,rgba(86,141,196,1) 100%);
+background: linear-gradient(to bottom,  rgba(110,177,244,1) 0%,rgba(86,141,196,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6eb1f4', endColorstr='#568dc4',GradientType=0 );
+
+	color:#fff;
+}
+*/
+.assetPane .closeAssetPane {
+	background:#4A8174;
+	color:#fff;
+}
+
+.storageDraggable .assetPane .pagesScroll .responsiveListItem,.storageDraggable .assetPane .pagesScroll .thumbItem {
+	cursor: move;
+}
+.storageDraggable#mainWrapperObs .assetPane .pagesScroll {
+	background: none;
+}
+.storageDraggable#mainWrapperObs .assetPane .cleverFilterBar {
+
+	background:rgba(50,50,50,0.9);
+	/*background-image:url("../graphics/circles-tex.png");
+	background-size: 227.5px 116.5px;*/
+}
+.storageDraggable#mainWrapperObs .assetPane .dragInsertTab.current {
+	background: #555;
+	background:rgba(84,84,84,1);
+	/*background-image:url("../graphics/circles-tex.png");
+	background-size: 227.5px 116.5px;*/
+}
+.storageDraggable#mainWrapperObs .assetPane .cleverFilterBar .subHeaderLeftMenuItem .target:after {
+	border-top:4px solid rgba(255,255,255,0.5);
+}
+.storageDraggable#mainWrapperObs .assetPane .cleverFilterBar .subHeaderLeftMenuItem .target:before {
+	border-bottom:4px solid rgba(255,255,255,0.5);
+}
+.storageDraggable#mainWrapperObs .assetPane .cleverFilterBar  .subHeaderLeftMenuItem .target {
+	color:#fff;
+}
+.storageDraggable#mainWrapperObs .rightPane.assetPane {
+	background: rgba(50,50,50,0.95);
+	/*background:rgba(50,50,50,0.9);	*/
+	-webkit-box-shadow:0 0 20px rgba(0,0,0,0.4);
+	-moz-box-shadow:0 0 20px rgba(0,0,0,0.4);
+	box-shadow:0 0 20px rgba(0,0,0,0.4);
+	/*background-image:url("../graphics/circles-tex.png");
+	background-size: 227.5px 116.5px;*/
+}
+.storageDraggable#mainWrapperObs .rightPane.assetPane .paneTools {
+	background:rgb(50,50,50);
+	border-left:1px solid #111;
+}
+.storageDraggable#mainWrapperObs .rightPane.assetPane .disabledMask {
+	background:rgba(50,50,50,0.7);
+}
+.storageDraggable#mainWrapperObs .rightPane.assetPane .paneTools .paneToolsBottomHalf
+, .storageDraggable#mainWrapperObs .rightPane.assetPane .paneTools .paneToolsBottomFull 
+, .storageDraggable#mainWrapperObs .rightPane.assetPane .paneTools h2
+, .storageDraggable#mainWrapperObs .rightPane.assetPane .paneTools a.paneToolToggleItem
+, .storageDraggable#mainWrapperObs .rightPane.assetPane .paneTools a.paneToolToggleItem:hover
+, .storageDraggable#mainWrapperObs .rightPane.assetPane .paneTools a.paneToolToggleItem:after
+{
+	color:#fff;
+}
+.storageDraggable#mainWrapperObs .rightPane.assetPane .paneTools .subHeaderLeftMenuItem .target
+,.storageDraggable#mainWrapperObs .rightPane.assetPane .paneTools .paneToolsPrimary.secondaryAction
+,.storageDraggable#mainWrapperObs .rightPane.assetPane .paneTools .paneToolsPrimary {
+	border:1px solid #111;
+}
+/* ASSETS TRANSPARENCY BASED */
+,.assetPane .topBar .subHeaderLeftMenuItem.showing .target
+ {
+	background:rgba(0,0,0,0.2);
+}
+/* Settings */
+.subHeaderButton.settingsButton 
+,#mainWrapperObs #settingsFlyin
+{
+	background: #fff;
+}
+/* Settings Transparency Based */
+
+#mainWrapperObs .settingsItem a, #mainWrapperObs .settingsDropdown, #mainWrapperObs .settingsDropdownImagePreviews
+{
+	background:rgba(0,0,0,0.09);
+}
+#mainWrapperObs .settingsItem a:hover, #mainWrapperObs .settingsDropdown:hover, #mainWrapperObs .settingsDropdownImagePreviews:hover
+{
+	background-color:rgba(0,0,0,0.15);
+}
+#mainWrapperObs .settingsItem a.dz-drag-hover {
+	-webkit-box-shadow: inset 0 0 30px #ffea00;
+	-moz-box-shadow: inset 0 0 30px #ffea00;
+	box-shadow: inset 0 0 30px #ffea00;
+}
+
+
+/* Key */
+
+#bookingAvailabilityClose,#bookingsClose {
+	border:1px solid #93ACB6;
+}
+#launchPad {
+	background:#f3f3f3;
+}
+.topBarButtonBack
+,.topBarButtonBack:hover
+,.returnToLP
+,.subHeaderButton.primaryItem
+,.subHeaderButton.primaryItem:hover
+,#mainWrapperObs #popupDialogueContentSecondary.popupDialogueImportant
+,#mainWrapperObs #popupDialogueContentPrimary.popupDialogueImportant
+
+{ 
+	background-color: #418BD0;
+}
+.bpe_area p.bpe_highlight
+, .bpe_area h1.bpe_highlight
+, .bpe_area h2.bpe_highlight
+, .bpe_area h3.bpe_highlight
+, .bpe_area h4.bpe_highlight
+, .bpe_area h5.bpe_highlight
+, .bpe_area pre.bpe_highlight
+, .bpe_area li.bpe_highlight
+, .bpe_area form.bpe_highlight
+, .bpe_area .bpe_table.bpe_highlight
+,.listItemHighlight
+,.responsiveListItem.offline.editPageBar.listItemHighlight
+,.responsiveListItem.offline.editPageBar.listItemHighlight .showSubPages
+,.responsiveListItem.editPageBar.listItemHighlight .showSubPages
+,.responsiveListItem.offline.listItemHighlight
+,.topBar.nonEditable
+,.paneToolsAction,.paneToolsAction:hover
+,#livechatFloaterHeader
+,.dot1, .dot2
+{
+	background-color: #93ACB6;
+}
+#mainWrapperObs .assetPaneHeader h1 strong
+,#mainWrapperObs #settingsFlyinHeader h1
+,#lpPagesIcon:after
+,#lpBlogIcon:after
+,#lpSettingsIcon:after
+,#lpLivechatIcon:after
+,#lpCheckoutIcon:after
+,#lpStatisticsIcon:after
+,.lpBoxSmall a
+,.lpBoxSmall a:hover
+,.lpBoxBig
+,.topBar h1
+,#bookingAvailabilityClose,#bookingsClose
+ {
+	color:#000;
+}
+
+#lpPagesIcon:after {
+	color:#F45B69;
+}
+#lpBlogIcon:after {
+	color:#276FBF;
+}
+#lpCheckoutIcon:after {
+	color:#9BC53D;
+}
+#lpBookingsIcon:after {
+	color:#404E4D;
+}
+#lpSettingsIcon:after {
+	color:#523F38;
+}
+#lpDesignIcon:after {
+	color:#64B6AC;
+}
+#lpLivechatIcon:after {
+	color:#5BC0EB;
+}
+#lpStatisticsIcon:after {
+	color:#BBC7A4;
+}
+

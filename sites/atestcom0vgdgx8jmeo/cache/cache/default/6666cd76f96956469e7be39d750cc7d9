@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+
+	<title>EXAMPLE COMPANY, AND SLOGAN</title>
+	<meta name="description" content=" -  - "/>
+	<meta property="og:title" content="" />
+	<meta property="og:type" content="article" />
+	<meta property="og:image" content="" />	<meta property="og:description" content=" -  - " />
+	<meta property="og:site_name" content="EXAMPLE COMPANY"/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:description" content=" -  - " />
+	<meta name="twitter:image" content="" />
+			
+		
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<script src="/javascripts/cache-1501006260.js"></script> 
+	<script src="/javascripts/owl.carousel.min.js"></script>
+	<script src="/javascripts/backstretch.js"></script>
+	<script src="/javascripts/doubletaptogo.js"></script>
+	<script src="/javascripts/overlaps.js"></script>
+
+	<link rel="stylesheet" href="/css/cache-1501006260.css" type="text/css" charset="utf-8"/> 
+	<link rel="stylesheet" href="/css/print.css" type="text/css" media="print" charset="utf-8"/>
+
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+	<![endif]-->
+
+		
+
+	
+<meta name="disablelivechat" content="disabled" /></head>
+<body class="homepage page_home parent_ top_parent_ page_id_26">
+
+	
+
+	<div class="container ontop">
+
+		<section class="row flexibreak-big" data-flexibreak-small="navsmall">
+
+			<div id="branding" class="module clearfix align-left clear-  valign-">
+	<a href="/"><img src="/graphics/logo.png" alt="EXAMPLE COMPANY"/></a>
+</div>
+
+			<div class="module clearfix social-links align-right valign-top valign  style-icons  ">
+	<div class="flexibreak-container">
+		<a href="" title="Facebook" class="social-link-facebook social-link">Facebook</a>
+		<a href="" title="Google+" class="social-link-googleplus social-link">Google+</a>
+		<a href="" title="LinkedIn" class="social-link-linkedin social-link">LinkedIn</a>
+		<a href="" title="Pinterest" class="social-link-pinterest social-link">Pinterest</a>
+		<a href="" title="Twitter" class="social-link-twitter social-link">Twitter</a>
+		<a href="" title="YouTube" class="social-link-youtube social-link">YouTube</a>
+		<a href="" title="Instagram" class="social-link-instagram social-link">Instagram</a>
+		<a href="" title="Vimeo" class="social-link-vimeo social-link">Vimeo</a>
+	</div>
+</div>
+			<div class="clearfix module livechat-link align-right   valign-top valign ">
+	<div>
+		<p id="livechat" style="display:none"><a href="/livechat/convo.php?language=en" id="startConvo">Livechat</a>
+		</p>
+	</div>
+</div>
+					
+			<div class="module clearfix nav     align-right valign-bottom valign   ">
+	<ul class="flexibreak-container contains-text clearfix">
+		
+				
+				
+		
+						
+						<li class="current  second-half"><a href="/" title="Home">Home</a> </li>
+								
+		
+		
+		
+	</ul>
+</div>
+
+		</section>
+		<section
+		    class="row flexibreak-small"
+		    id="navsmall">
+		    <div class="clearfix module mobile-menu align-left     ">
+<a href="">Menu</a>
+</div>
+		</section>
+	</div>
+
+
+				<div class="container content">
+					</div>
+	
+	<div id="search-form-popdown">
+		<div class="tri"></div>
+		<form action="/actions/SearchForward/" method="post" id="searchFormSmall">
+			<input type="hidden" name="language" value="en"/>
+			<input id="navSearch" type="text" name="string" value="" />
+			<p id="search-form-popdown-button" class="submit_form"><a href="#">Search</a></p>
+		</form>
+	</div>
+</body>
+</html>

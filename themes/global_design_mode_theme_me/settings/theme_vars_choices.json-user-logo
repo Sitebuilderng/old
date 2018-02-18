@@ -1,0 +1,205 @@
+[
+    {
+  		"value":"Coupon Codes"
+  		,"type":"title"
+  	}
+	,{
+		"display_name":"Enable Coupon Codes in Checkout"
+		,"variable_name": "enabled_coupons"
+		,"type": "tick"
+		,"default_value": "0"
+	}
+	,{
+		"type":"rule"
+	}
+	
+	,{
+		"display_name":"Discount 1 Codes"
+		,"variable_name": "discount_1_codes"
+		,"default_value": ""
+		,"info": "Enter a series of one or more codes separated by commas here. "
+		,"type": "text"
+	}
+	,{
+		"display_name":"Discount 1 Percentage"
+		,"variable_name": "percentage_1_discount"
+		,"default_value": "10"
+		,"info": "Enter a percent discount to apply for these codes."
+		,"type": "text"
+	}
+	,{
+		"type":"rule"
+	}
+	
+	,{
+		"display_name":"Discount 2 Codes"
+		,"variable_name": "discount_2_codes"
+		,"default_value": ""
+		,"info": "Enter a series of one or more codes separated by commas here. "
+		,"type": "text"
+	}
+	,{
+		"display_name":"Discount 2 Percentage"
+		,"variable_name": "percentage_2_discount"
+		,"default_value": "10"
+		,"info": "Enter a percent discount to apply for these codes."
+		,"type": "text"
+	}
+	,{
+		"type":"rule"
+	}
+	,{
+		"display_name":"Discount 3 Codes"
+		,"variable_name": "discount_3_codes"
+		,"default_value": ""
+		,"info": "Enter a series of one or more codes separated by commas here. "
+		,"type": "text"
+	}
+	,{
+		"display_name":"Discount 3 Percentage"
+		,"variable_name": "percentage_3_discount"
+		,"default_value": "10"
+		,"info": "Enter a percent discount to apply for these codes."
+		,"type": "text"
+	}
+	,{
+		"type":"rule"
+	}
+	,{
+		"display_name":"Discount 4 Codes"
+		,"variable_name": "discount_4_codes"
+		,"default_value": ""
+		,"info": "Enter a series of one or more codes separated by commas here. "
+		,"type": "text"
+	}
+	,{
+		"display_name":"Discount 4 Percentage"
+		,"variable_name": "percentage_4_discount"
+		,"default_value": "10"
+		,"info": "Enter a percent discount to apply for these codes."
+		,"type": "text"
+	}
+	,{
+		"type":"rule"
+	}
+	,{
+		"display_name":"Discount 5 Codes"
+		,"variable_name": "discount_5_codes"
+		,"default_value": ""
+		,"info": "Enter a series of one or more codes separated by commas here. "
+		,"type": "text"
+	}
+	,{
+		"display_name":"Discount 5 Percentage"
+		,"variable_name": "percentage_5_discount"
+		,"default_value": "10"
+		,"info": "Enter a percent discount to apply for these codes."
+		,"type": "text"
+	}
+  	,{
+		"value":"Template Settings"
+		,"type":"title"
+	}
+	,{
+			"display_name":"Main Logo (.png with transparent background)"
+			,"variable_name": "main_logo"
+			,"type": "image"
+	}
+	,{
+			"display_name":"Mini version of logo"
+			,"variable_name": "main_logo_fixed"
+			,"type": "image"
+	}
+	,{
+		"type":"rule"
+	}
+	,{
+		"display_name":"Website Title"
+		,"variable_name": "site_title"
+		,"info": "Please enter the name of your website or company. This will be used to generate social sharing meta data."
+		,"type": "text"
+	}
+	,{
+		"display_name":"Append string to meta title"
+		,"variable_name": "meta_title_append"
+		,"info": "Please enter text to be automatically appended to every meta title value on the website. This could be your company name, location and slogan."
+		,"type": "text"
+	}
+    ,{
+  		"value":"Social and contact"
+  		,"type":"title"
+  	}
+	,{
+		"display_name":"Twitter link"
+		,"variable_name": "twitter_link"
+		,"info": "Please enter your Twitter profile link. This will be used for the Twitter social media icon."
+		,"type": "text"
+	}
+	,{
+		"display_name":"YouTube link"
+		,"variable_name": "youtube_link"
+		,"info": "Please enter your YouTube link URL. This will be used for the YouTube social media icon."
+		,"type": "text"
+	}
+	,{
+		"display_name":"Facebook link"
+		,"variable_name": "facebook_link"
+		,"info": "Please enter your Facebook page link. This will be used for the Facebook social media icon."
+		,"type": "text"
+	}
+	,{
+		"display_name":"Vimeo link"
+		,"variable_name": "vimeo_link"
+		,"info": "Please enter your Vimeo page link. This will be used for the Vimeo social media icon."
+		,"type": "text"
+	}
+	,{
+		"display_name":"LinkedIn link"
+		,"variable_name": "linkedin_link"
+		,"info": "Please enter your LinkedIn page link. This will be used for the LinkedIn social media icon."
+		,"type": "text"
+	}
+	,{
+		"display_name":"Google+ link"
+		,"variable_name": "gplus_link"
+		,"info": "Please enter your Google+ page link. This will be used for the Google+ social media icon."
+		,"type": "text"
+	}
+	,{
+		"display_name":"Pinterest link"
+		,"variable_name": "pinterest_link"
+		,"info": "Please enter your Pinterest page link. This will be used for the Pinterest social media icon."
+		,"type": "text"
+	}
+	,{
+		"display_name":"Instagram link"
+		,"variable_name": "instagram_link"
+		,"info": "Please enter your Instagram page link. This will be used for the Instagram social media icon."
+		,"type": "text"
+	}
+	,{
+		"type":"rule"
+	}
+	,{
+		"display_name":"Phone number"
+		,"variable_name": "phone_number"
+		,"info": "Please enter a phone number to display in the social icons list."
+		,"type": "text"
+	}
+	,{
+		"type":"rule"
+	}
+	,{
+		"display_name":"Email Link"
+		,"variable_name": "email_link"
+		,"info": "Please enter your email address here to add an email link to the social icons list."
+		,"type": "text"
+	}
+	,{
+		"display_name":"Show livechat icon in social icons list"
+		,"variable_name": "include_livechat"
+		,"type": "tick"
+		,"default_value": "0"
+	}
+	
+]

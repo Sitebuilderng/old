@@ -1,0 +1,61 @@
+#fullWidthBannerBG {
+	display: none;
+}
+#fullWidthBanner.withBlog {
+	border-bottom:20px solid #fff;
+}
+#blogContent #fullWidthBanner {
+	margin-bottom: 20px;
+}
+#fullWidthBanner {
+	background: #ccc;
+}
+#fullWidthBanner .container {
+	padding:40px 0 40px;
+	
+}
+.homepage #fullWidthBanner .container {
+	min-height: 300px;
+	padding:80px 0 60px;
+}
+@media (min-width:1100px) { 
+	.homepage #fullWidthBanner .container {
+		min-height: 400px;
+	}
+}
+@media (max-width:760px) { 
+	.homepage #fullWidthBanner .container {
+		min-height: 200px;
+		padding: 30px 0 20px;
+	}
+}
+#fullWidthBanner .button a,
+#fullWidthBanner .Button_Small a,
+#fullWidthBanner .Button_Medium a,
+#fullWidthBanner .Button_Large a,
+#fullWidthBanner button,
+#fullWidthBanner input[type="submit"],
+#fullWidthBanner input[type="reset"],
+#fullWidthBanner input[type="button"] {
+	box-shadow:3px 3px 0px rgba(0,0,0,0.3);
+}
+#fullWidthBanner p,#fullWidthBanner a {
+	color:#fff;
+}
+#fullWidthBanner cite p {
+	font-size:21px;
+	line-height:30px;
+	font-style:italic;
+}
+@media (max-width: 600px) {
+	#fullWidthBanner cite p {
+		font-size:18px;
+		line-height:24px;
+	}
+}
+#fullWidthBanner cite p
+,#fullWidthBanner cite p a
+,#fullWidthBanner cite p a:link
+,#fullWidthBanner cite p a:visited {
+	color:#fff;
+}

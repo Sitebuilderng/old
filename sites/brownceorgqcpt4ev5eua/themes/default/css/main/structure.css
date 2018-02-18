@@ -1,0 +1,46 @@
+.container {
+	background:#fff;
+	padding:20px;
+	overflow:hidden;
+}
+.container.ontop {
+	z-index: 2;
+	overflow:visible;
+}
+.container.parallax > .backstretch img {
+	position:absolute !important;
+	pointer-events: none;
+	-webkit-backface-visibility: hidden;
+-moz-backface-visibility: hidden;
+backface-visibility: hidden;
+}
+.supports-pos-fixed .container.parallax > .backstretch img {
+	position:fixed !important;
+}
+.backstretch {
+	position: absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	height:100% !important;
+}
+.supports-pos-fixed .backstretch {
+	clip: rect(0, auto, auto, 0);
+	clip-path: inset(0 0 0 0);
+}
+section.row {
+	padding:0px 20px;
+	max-width:1400px;
+	margin:3px auto;
+	position:relative;
+}
+section.row.mobile-menu-row {
+	margin:0;
+}
+div.content-block.align-left {
+	float:left;
+}
+div.content-block.align-right {
+	float:right;
+}

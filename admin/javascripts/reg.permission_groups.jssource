@@ -1,0 +1,314 @@
+
+// Image Categories groups
+
+function editPermissionGroups ($clicked) {
+	editMeListItem($clicked);
+	return false;
+}
+function deletePermissionGroupsPrep () {
+	if ($("#permissionGroupsPaneInner .listItemHighlight").length) {
+prepDialogue("<h2>"+LangVars.Are_You_Sure+"</h2><p>"+LangVars.Delete_Permission_Groups_Text+"<p>",LangVars.Cancel,cancelDialogue,LangVars.Delete,deletePermissionGroups,false,true);
+	}
+}
+function deletePermissionGroups () {
+	var Ids="[";
+	$("#permissionGroupsPaneInner .listItemHighlight").each(function(){
+
+		if (Ids=="[") {
+		Ids+='"'+$(this).attr("permission-group-id")+'"';
+		} else {
+		Ids+=',"'+$(this).attr("permission-group-id")+'"';
+		}
+	});
+	Ids+="]";
+	working();
+	$.ajax({
+	  type: "POST",
+	  url: "adminUsersActions.php",
+	  data: "adminUsersAction=deletePermissionGroups&ids="+Ids,
+	  success: function(msg){
+if (msg=="<script>window.location='/admin/';</script>") { window.location='/admin/login.php?m=3'; return false; }
+
+		$("#permissionGroupsList").load("adminUsersActions.php?adminUsersAction=showPermissionGroups",function(){
+			$("#permissionGroupsListForGals").html($("#permissionGroupsList").html());
+			if ($("#permissionGroupsList li").length==0) {
+				$("#filterByPermissionGroups").hide();
+				$("#permissionGroupsList").next().hide();
+				$("#permissionGroupsList").hide();
+			}
+			if ($("#rightPanePermissionGroups .permissionGroupsItem").length===0) {
+				$("#rightPanePermissionGroups .noPages").show();
+			}
+			displayPermissionGroups();
+			cancelDialogue();
+			selectionTools();
+			
+			assignPermissionGroupsKeys();
+
+			saved();
+			$("#eventsGroupsPaneInner").lovelyScroll();
+		});
+
+	  }
+	});
+}
+function addPermissionCategory () {
+	$(document).unbind("click");
+	$(document).unbind("keyup");
+	$(document).unbind("keydown");
+	$(document).unbind("keypress");
+	$("#rightPanePermissionGroups .noPages").hide();
+	$("#rightPanePermissionGroups .addPermissionGroup").show();
+	prepFancyLabelForms($("#rightPanePermissionGroups .addPermissionGroup"));
+	$("#rightPanePermissionGroups .addPermissionGroup .focus").focus();
+	function saveOrCancel () {
+		$("#rightPanePermissionGroups .addPermissionGroup .focus").unbind("blur");
+		if ($("#rightPanePermissionGroups .addPermissionGroup .focus").val()=="" || $("#rightPanePermissionGroups .addPermissionGroup .focus").val()==" ") {
+			resetAddForms();
+			if ($("#rightPanePermissionGroups .permissionGroupsItem").length===0) {
+				$("#rightPanePermissionGroups .noPages").show();
+			}
+		} else {
+			working();
+			$.ajax({
+			  type: "POST",
+			  url: "adminUsersActions.php",
+			  data: "adminUsersAction=addPermissionGroup&name="+encodeURIComponent($("#rightPanePermissionGroups .addPermissionGroup .focus").val()),
+			  success: function(msg){
+	if (msg=="<script>window.location='/admin/';</script>") { window.location='/admin/login.php?m=3'; return false; }
+			if (msg=="exists") {
+				error(LangVars.Permission_Exists);
+			}
+				postAddPermissionGroup(false);
+			  }
+			});
+		}
+	}
+	$("#rightPanePermissionGroups .addPermissionGroup .focus").unbind("blur").blur(function(){
+		saveOrCancel();
+		return false;
+	});
+	$(document).keyup(function(e){
+		if (e.keyCode==13) { // enter
+			saveOrCancel();
+			return false;
+		}
+	});
+	$(document).keydown(function(e){
+		if (e.keyCode==13) { // enter
+
+			return false;
+		}
+		if (e.keyCode==27) { // esc
+			saveOrCancel();
+			return false;
+		}
+	});
+}
+
+function displayPermissionGroups () {
+
+	$("#permissionGroupsPaneInner .insertTarget").html("");
+	$("#permissionGroupsPaneInner .insertTarget").append("<div class='dropzone'><div></div></div>");
+	
+	hidePaneTools();
+
+	var c = 0;
+	$("#permissionGroupsList a").each(function(){
+		$("#permissionGroupsPaneInner .insertTarget").append("<div class='responsiveListItem permissionGroupsItem' permission-group-id='"+$(this).attr("permission-group-id")+"' title=\""+$(".overflowEllipsis",$(this)).html()+"\"><span class='overflowEllipsis'>"+$(".overflowEllipsis",$(this)).html()+"</span></div><div class='dropzone'><div></div></div>");
+		c++;
+	});
+	if (c==0) {
+		$("#permissionGroupsPaneInner .insertTarget").append("<div class='noPages'>"+LangVars.No_Event_Groups+"</div>");
+	}
+
+
+}
+function renamePermissionGroupsCallback() {
+	$("#permissionGroupsList").load("adminUsersActions.php?adminUsersAction=showPermissionGroups",function(){
+		$("#permissionGroupsListForGals").html($("#permissionGroupsList").html());
+		if ($("#permissionGroupsList li").length==0) {
+			$("#filterByPermissionGroups").hide();
+			$("#permissionGroupsList").next().hide();
+			$("#permissionGroupsList").hide();
+		}
+		if ($("#rightPanePermissionGroups .permissionGroupsItem").length===0) {
+			$("#rightPanePermissionGroups .noPages").show();
+		}
+		selectionTools();
+		cancelDialogue();
+		assignPermissionGroupsKeys();
+		saved();
+		$("#eventsGroupsPaneInner").lovelyScroll();
+	});
+}
+
+function assignPermissionGroupsKeys () {
+	$(document).unbind("keydown");
+	$(document).unbind("keyup");
+	$(document).unbind("keypress");
+	assignSelectionKeys();
+	$(document).keyup(function (e) {
+		if (e.keyCode==13) { // enter
+			if ($("#rightPanePermissionGroups .listItemHighlight").length==1) {
+				editEventGroup($("#permissionGroupsPaneInner .listItemHighlight"));
+			}
+			return false;
+		}
+	});
+	$(document).keydown(function (e) {
+		if (e.keyCode==8) { // backspace
+			deletePermissionGroupsPrep();
+			return false;
+		}
+		if (e.keyCode==78) { // n
+			if (!metaDown) {
+				addPermissionCategory();
+				e.preventDefault();
+			}
+
+			return false;
+		}
+		if (e.keyCode==33) { // pageup
+			var pageH = $("#permissionGroupsPaneInner").height();
+			$("#permissionGroupsPaneInner").lovelyScrollMove(pageH);
+			return false;
+		}
+		if (e.keyCode==34) { // subscriberCategoriesPaneInner
+			var pageH = $("#permissionGroupsPaneInner").height();
+			$("#permissionGroupsPaneInner").lovelyScrollMove(-pageH);
+			return false;
+		}
+	});
+}
+
+function postAddPermissionGroup(applyTo,catId) {
+	$("#filterByPermissionGroups").show();
+	$("#permissionGroupsList").next().show();
+	$("#permissionGroupsList").show().load("adminUsersActions.php?adminUsersAction=showPermissionGroups",function(){
+		$(".permission-groups").html($("#permissionGroupsList").html());
+//		$("#permissionGroupsListForGals").html($("#permissionGroupsList").html()); // item level group list
+		saved();
+		displayPermissionGroups();
+		$("#permissionGroupsPaneInner .responsiveListItem:first").addClass("listItemHighlight");
+		$("#permissionGroupsPaneInner").lovelyScroll();
+		assignPermissionGroupsKeys();
+		assignSortableListItems($("#permissionGroupsPaneInner"),"listItemHighlight","responsiveListItem");
+		
+		setTimeout(function() {
+			selectionTools();
+		}, 100);
+
+		resetAddForms();
+		cancelDialogue();
+	});
+	
+}
+
+$(document).ready(function(){
+
+	$("#iconbarDeletePermissionGroups").click(function(){
+		if (justScrolled) {return false;}
+		if (ignoreClickCatchup) {return false;}
+		deletePermissionGroupsPrep();
+		return false;
+	});
+	$("#managePermissionGroups").click(function(){
+		if (justScrolled) {return false;}
+		if (ignoreClickCatchup) {return false;}
+		//hidePanes();
+
+		$("input").unbind();
+		$("#loadingMask").show();
+		$(".assetPane,.rightPane").hide();
+		hide_iconbar_menus();
+		displayPermissionGroups();
+		assignListPane($("#permissionGroupsPaneInner"),editPermissionGroups);
+		assignSortableListItems($("#permissionGroupsPaneInner"),"listItemHighlight","responsiveListItem");
+		$("#permissionGroupsPaneInner").css("width","auto");
+		showPane($("#rightPanePermissionGroups"),false,true);
+		setTimeout(function() {$("#permissionGroupsPaneInner").lovelyScroll();}, 400);
+
+		assignPermissionGroupsKeys();
+
+		$("#loadingMask").hide();
+		return false;
+	});
+	
+	$("#iconbarAddPermissionGroup").click(function(){
+		if (justScrolled) {return false;}
+		if (ignoreClickCatchup) {return false;}
+		addPermissionCategory();
+		return false;
+	});
+	$("#permissionGroupsList").click(function(e){
+		var $target=false;
+		if ($(e.target).hasClass("overflowEllipsis")) {
+			$target = $(e.target).parent();
+		}
+		if ($(e.target).hasClass("bpe_selection_tool")) {
+			$target = $(e.target);
+		}
+		if (!$target) {
+			return false;
+		}
+
+		if (!$target.hasClass("greyedOut")) {
+			if ($target.hasClass("bpe_current")) {
+				var action = "removeFromCat";
+			} else {
+				var action = "addToCat";
+			}
+			$clicked = $target;
+			var catId = $target.attr("permission-group-id");
+			
+			var Ids="[";
+			$("#staffPaneInner .listItemHighlight").each(function(){
+				if (Ids=="[") {
+				Ids+='"'+$(this).attr("staff-id")+'"';
+				} else {
+				Ids+=',"'+$(this).attr("staff-id")+'"';
+				}
+			});
+			Ids+="]";
+		
+			working();
+			$.ajax({
+			  type: "POST",
+			  url: "adminUsersActions.php",
+			  data: "adminUsersAction=changeAdminUserInGroups&ids="+Ids+"&action="+action+"&group="+catId,
+			  success: function(msg){
+		if (msg=="<script>window.location='/admin/';</script>") { window.location='/admin/login.php?m=3'; return false; }
+				$("#staffPaneInner .listItemHighlight").each(function(){
+					if (action=="addToCat") {
+						if (!$("#permissiongroup"+catId,$(this)).length) {
+							$(this).append("<input type='hidden' id='permissiongroup"+catId+"' value='"+catId+"' />")
+						}
+					} else {
+						$("#permissiongroup"+catId,$(this)).remove();
+					}
+					var catsCSV = new Array();
+					$("input[type=hidden]",$(this)).each(function(){
+						catsCSV.push($(this).val());
+					});
+					catsCSV.sort(function(b,a){return a-b});
+					var newCats="";
+					for (var i = 0; i < catsCSV.length; i++) {
+						if (i==0) {
+							newCats=catsCSV[i];
+						} else {
+							newCats=newCats+","+catsCSV[i];
+						}
+					};
+					$(this).attr("data-permission-groups",newCats);
+				});
+				selectionTools();
+				saved();
+			  }
+			});
+
+		}
+		return false;
+	});
+
+});

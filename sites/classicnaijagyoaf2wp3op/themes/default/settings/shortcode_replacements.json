@@ -1,0 +1,7 @@
+
+[
+	{
+		"shortcode":"info@example.com"
+		,"replace": "<script type=\"text/javascript\">\r/*<![CDATA[*//******* Tool from Privacy Policy Online\r* URL: http://www.PrivacyPolicyOnline.com* *************/\r<!-- Encrypted version of: your email //-->\rvar CodedArray=[105,110,102,111,64,101,120,97,109,112,108,101,46,99,111,109,]\rvar encryptedEmail='' \rfor (var i=0; i<CodedArray.length; i++)\r encryptedEmail+=String.fromCharCode(CodedArray[i])\rdocument.write('<a href=\"mailto:')\rdocument.write(encryptedEmail)\rdocument.write('\">')\rdocument.write(encryptedEmail)\rdocument.write('</a>')\r/*]]>*/\r</script>\r"
+	}
+]

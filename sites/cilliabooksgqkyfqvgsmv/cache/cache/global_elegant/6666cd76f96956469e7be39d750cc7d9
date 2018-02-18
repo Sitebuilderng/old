@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+		<meta charset="utf-8">
+					
+					
+					
+				
+	<title> - </title>
+	<meta name="description" content=" -  - "/>
+
+		
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<script src="/javascripts/cache-1500443624.js"></script>	
+	
+		<script src="/javascripts/owl.carousel.min.js"></script>
+	<script src="/javascripts/backstretch.js"></script>
+	<script src="/javascripts/doubletaptogo.js"></script>
+	
+	<link href='http://fonts.googleapis.com/css?family=Mako|Fjord+One' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/css/cache-1500443711.css" type="text/css" charset="utf-8"/>
+	
+	<link rel="stylesheet" href="/css/print.css" type="text/css" media="print" charset="utf-8"/>
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+		
+	<!--[if lt IE 9]>
+	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+	<![endif]-->
+
+<meta name="disablelivechat" content="disabled" /></head>
+<body class="withAd homepage page_home   id_26 "  data-bg-mode="stretch">
+<div id="bg">
+	<div id="mainBg">
+	
+				<div id="topbar">
+			<div class="container">
+								<div class="socialIconsTiny header">
+										<a href="https://plus.google.com/+GoogleUK/posts" title="Google+"><img src="/graphics/social-small-gplus.png" alt=""/></a>					<a href="https://www.linkedin.com/company/1337" title="LinkedIn"><img src="/graphics/social-small-linkedin.png" alt=""/></a>										<a href="http://twitter.com/Twitter" title="Twitter"><img src="/graphics/social-small-twitter.png" alt=""/></a>														</div>
+								<div id="contact">	
+					<ul>
+										<li class="Icon_Phone">
+						01234 123123
+					</li>
+															<li class="Icon_Email">
+						
+						<script type="text/javascript">document.write(
+						'<n uers="znvygb:vasb@rknzcyr.pbz">vasb@rknzcyr.pbz'.replace(/[a-zA-Z]/g, function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
+						</script>
+
+						</a>
+					</li>
+										<li id="livechat" class="Icon_Livechat" style="display:none"><a href="/livechat/convo.php?language=en" id="startConvo">Livechat</a>
+					</li>
+					</ul>
+				</div>
+				
+				
+							</div>
+			<nav id="nav" role="navigation" class="clearfix">
+	<div class="container">
+		<a href="#nav" title="Show navigation" class="navToggle show">+</a>
+    	<a href="#" title="Hide navigation" class="navToggle hide">-</a>
+    	    	<a href="#topbar" title="Show Contact Bar" class="contactBarToggle show">+</a>
+    	<a href="#" title="Hide Contact Bar" class="contactBarToggle hide">-</a>
+    					<div id="textLogo" class="text_logo_size_medium">	
+			<p><a href="/">ELEGANT</a></p>
+		</div>
+			    <div id="expandNav" class="size_2 with_logo_size_medium">
+			<ul>
+												<li class="current"><a href="/" title="Home">Home</a> </li>
+												 
+				<li>
+					<form action="/actions/SearchForward/" method="post" id="searchFormSmall">
+						<fieldset class="focusSwapWrap">
+						<input type="hidden" name="language" value="en"/>
+						<label for="navSearch" class="focusSwapLabel">Search</label>
+						<input id="navSearch" type="text" name="string" value="" />
+						</fieldset>
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>		</div>
+				
+		<br class="clear" />
+				
+																										</div> <!-- #mainBg -->
+			<div id="footers" data-background="/images/themegraphics/" data-bg-mode="stretch">
+											</div>
+		</div> <!-- #bg -->
+<a href="#" id="backToTop"></a>
+<div id="loading"></div>
+<div id="ad">
+	<a href="#">Get your own FREE website today.</a>
+</div>
+</body>
+</html>

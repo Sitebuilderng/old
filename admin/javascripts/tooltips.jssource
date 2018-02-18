@@ -1,0 +1,310 @@
+var currentTooltip = false;
+var currentTooltipItem = 0;
+var interuptedChains = new Array();
+var tooltips = new Array();
+
+
+function logTrainingClick () {};
+function hideTraining () {};
+function showTraining () {};
+function hideToolTips(advance) {
+	$("body").removeClass("showingResize");
+	$("#toolTipEnlarge").fadeOut();
+	$(".reveal").removeClass("reveal");
+
+	$("#toolTip").fadeOut(200);
+	if (advance){
+
+		toolTipTimeout = setTimeout(tooltip, 300);
+	}
+}
+function showToolTip(){
+	
+	if ($("#toolTip:visible").length) {
+		interuptedChains.push({currentTooltip:currentTooltip,currentTooltipItem:currentTooltipItem});
+		return false;
+	}
+	$("#dismissToolTip").attr("showing",currentTooltip+"-"+currentTooltipItem);
+	$(".reveal").removeClass("reveal");
+	if (tooltips[currentTooltip][currentTooltipItem].reveal)  {
+		$(tooltips[currentTooltip][currentTooltipItem].reveal).addClass("reveal");
+	}
+
+	$('#dontShowToolTipAgain').addClass("checked");
+	var texts = toHTML(tooltips[currentTooltip][currentTooltipItem].texts);
+
+	if (iOS||!isMouseBased) {
+		if (tooltips[currentTooltip][currentTooltipItem].texts_touch) {
+			var texts_touch = toHTML(tooltips[currentTooltip][currentTooltipItem].texts_touch);
+			$("#toolTipText").html(texts_touch);
+		} else {
+			$("#toolTipText").html(texts);
+		}
+	} else {
+		$("#toolTipText").html(texts);
+	}
+
+	$("#toolTip").removeClass("nudgeP55");
+	$("#toolTip").removeClass("nudgeP60");
+	$("#toolTip").removeClass("nudgeP65");
+	$("#toolTip").removeClass("nudgeP70");
+	$("#toolTip").removeClass("nudgeP75");
+	$("#toolTip").removeClass("nudgeP80");
+	$("#toolTip").removeClass("nudgeP85");
+	$("#toolTip").removeClass("nudgeP90");
+	$("#toolTip").removeClass("nudgeP95");
+
+	$("#toolTip").css("visibility","hidden").show();
+	var toolTipHeight = $("#toolTip").outerHeight();
+	var toolTipInnerWidth = $("#toolTip").width();
+	var toolTipWidth = $("#toolTip").outerWidth();
+	$("#toolTip").hide().css("visibility","visible");
+	$("#toolTip").removeClass("body_center").removeClass("top_left").removeClass("top_center").removeClass("right_center").removeClass("center_center").removeClass("top_right").removeClass("bottom_left").removeClass("bottom_center").removeClass("bottom_right");
+	$("#toolTip").addClass(tooltips[currentTooltip][currentTooltipItem].pos);
+	$(".toolTip").css("margin-top","0").css("margin-left","0");
+	if (tooltips[currentTooltip][currentTooltipItem].withEnlarge===true) {
+		$("#toolTipEnlarge").css("display","table-cell");
+		$("body").addClass("showingResize");
+	}
+	if (tooltips[currentTooltip][currentTooltipItem].pos=="top_left")  {
+		var ofTop = $(tooltips[currentTooltip][currentTooltipItem].itarget).offset().top + $(tooltips[currentTooltip][currentTooltipItem].itarget).outerHeight();
+		var ofLeft = $(tooltips[currentTooltip][currentTooltipItem].itarget).offset().left;
+		$(".toolTip").css({top:ofTop-10+"px",left:ofLeft+"px",opacity:0,display:"block"}).animate({top:ofTop+10,opacity:1});
+	}
+	if (tooltips[currentTooltip][currentTooltipItem].pos=="center_center")  {
+		var ofTop = $(tooltips[currentTooltip][currentTooltipItem].itarget).offset().top + ( $(tooltips[currentTooltip][currentTooltipItem].itarget).outerHeight()/2 ) - (toolTipHeight/2);
+		var ofLeft = $(tooltips[currentTooltip][currentTooltipItem].itarget).offset().left + ( $(tooltips[currentTooltip][currentTooltipItem].itarget).outerWidth()/2 ) - (310/2);
+		$(".toolTip").css({top:ofTop-10+"px",left:ofLeft+"px",opacity:0,display:"block"}).animate({top:ofTop+10,opacity:1});
+	}
+
+	if (tooltips[currentTooltip][currentTooltipItem].pos=="body_center")  {
+		var mt = toolTipHeight/2;
+		var ml = toolTipWidth/2;
+		var ofTop = $(tooltips[currentTooltip][currentTooltipItem].itarget).offset().top + ( $(tooltips[currentTooltip][currentTooltipItem].itarget).outerHeight()/2 ) - (toolTipHeight/2);
+		var ofLeft = $(tooltips[currentTooltip][currentTooltipItem].itarget).offset().left + ( $(tooltips[currentTooltip][currentTooltipItem].itarget).outerWidth()/2 ) - (310/2);
+		$(".toolTip").css({top:"50%",left:"50%",marginTop:"-"+mt+"px",marginLeft:"-"+ml+"px",opacity:0,display:"block"}).animate({opacity:1});
+	}
+
+	if (tooltips[currentTooltip][currentTooltipItem].pos=="bottom_center")  {
+		var ofTop = $(tooltips[currentTooltip][currentTooltipItem].itarget).offset().top - toolTipHeight;
+		var ofLeft = $(tooltips[currentTooltip][currentTooltipItem].itarget).offset().left  - 150 + ($(tooltips[currentTooltip][currentTooltipItem].itarget).outerWidth()/2);
+
+		var rightEdge = ofLeft+toolTipWidth+40;
+		var diff = rightEdge - $(window).width()-20;
+		if (rightEdge > $(window).width()-20) {
+			ofLeft = ofLeft-diff;
+			var percentageDiff = (diff / (toolTipInnerWidth))*100;
+
+			percentageDiff=  5 * Math.round(percentageDiff/5);
+			percentageDiff = percentageDiff+50;
+			$("#toolTip").addClass("nudgeP"+percentageDiff);
+		}
+
+
+
+		if ($(tooltips[currentTooltip][currentTooltipItem].itarget).offset().top<toolTipHeight+10) {
+
+			$("#toolTip").removeClass("top_left").removeClass("top_center").removeClass("center_center").removeClass("top_right").removeClass("bottom_left").removeClass("bottom_center").removeClass("bottom_right");
+
+			$("#toolTip").addClass("top_center");
+			var ofTop = $(tooltips[currentTooltip][currentTooltipItem].itarget).offset().top + $(tooltips[currentTooltip][currentTooltipItem].itarget).outerHeight();
+			var ofLeft = $(tooltips[currentTooltip][currentTooltipItem].itarget).offset().left  - 150 + ($(tooltips[currentTooltip][currentTooltipItem].itarget).outerWidth()/2);
+
+			var rightEdge = ofLeft+toolTipWidth+40;
+			var diff = rightEdge - $(window).width()-20;
+			if (rightEdge > $(window).width()-20) {
+				ofLeft = ofLeft-diff;
+				var percentageDiff = (diff / (toolTipInnerWidth))*100;
+
+				percentageDiff=  5 * Math.round(percentageDiff/5);
+				percentageDiff = percentageDiff+50;
+				$("#toolTip").addClass("nudgeP"+percentageDiff);
+			}
+
+
+
+			$(".toolTip").css({top:ofTop-10+"px",left:ofLeft+"px",opacity:0,display:"block"}).animate({top:ofTop+10,opacity:1});
+		} else {
+
+
+
+			$(".toolTip").css({top:ofTop+10+"px",left:ofLeft+"px",opacity:0,display:"block"}).animate({top:ofTop-10,opacity:1});
+		}
+	}
+	if (tooltips[currentTooltip][currentTooltipItem].pos=="top_center")  {
+		var ofTop = $(tooltips[currentTooltip][currentTooltipItem].itarget).offset().top + $(tooltips[currentTooltip][currentTooltipItem].itarget).height();
+		var ofLeft = $(tooltips[currentTooltip][currentTooltipItem].itarget).offset().left  - 150 + ($(tooltips[currentTooltip][currentTooltipItem].itarget).outerWidth()/2);
+
+		var rightEdge = ofLeft+toolTipWidth+40;
+		var diff = rightEdge - $(window).width()-20;
+		if (rightEdge > $(window).width()-20) {
+			ofLeft = ofLeft-diff;
+			var percentageDiff = (diff / (toolTipInnerWidth))*100;
+
+			percentageDiff=  5 * Math.round(percentageDiff/5);
+			percentageDiff = percentageDiff+50;
+			$("#toolTip").addClass("nudgeP"+percentageDiff);
+		}
+
+
+		if ($(tooltips[currentTooltip][currentTooltipItem].itarget).offset().top<toolTipHeight+10) {
+			$("#toolTip").removeClass("top_left").removeClass("top_center").removeClass("top_right").removeClass("bottom_left").removeClass("bottom_center").removeClass("bottom_right");
+			$("#toolTip").addClass("top_center");
+			var ofTop = $(tooltips[currentTooltip][currentTooltipItem].itarget).offset().top + $(tooltips[currentTooltip][currentTooltipItem].itarget).outerHeight();
+
+			$(".toolTip").css({top:ofTop-10+"px",left:ofLeft+"px",opacity:0,display:"block"}).animate({top:ofTop+10,opacity:1});
+
+		} else {
+
+
+			$(".toolTip").css({top:ofTop+10+"px",left:ofLeft+"px",opacity:0,display:"block"}).animate({top:ofTop-10,opacity:1});
+		}
+	}
+	if (tooltips[currentTooltip][currentTooltipItem].pos=="bottom_right")  {
+		var ofTop = $(tooltips[currentTooltip][currentTooltipItem].itarget).offset().top - toolTipHeight;
+		var ofLeft = $(tooltips[currentTooltip][currentTooltipItem].itarget).offset().left  - 290 + $(tooltips[currentTooltip][currentTooltipItem].itarget).outerWidth();
+		$(".toolTip").css({top:ofTop+10+"px",left:ofLeft+"px",opacity:0,display:"block"}).animate({top:ofTop-10,opacity:1});
+	}
+	if (tooltips[currentTooltip][currentTooltipItem].pos=="top_right")  {
+		var ofTop = $(tooltips[currentTooltip][currentTooltipItem].itarget).offset().top + $(tooltips[currentTooltip][currentTooltipItem].itarget).height() + 20;
+		var ofLeft = $(tooltips[currentTooltip][currentTooltipItem].itarget).offset().left  - 300 + $(tooltips[currentTooltip][currentTooltipItem].itarget).outerWidth();
+		$(".toolTip").css({top:ofTop+10+"px",left:ofLeft+"px",opacity:0,display:"block"}).animate({top:ofTop-10,opacity:1});
+	}
+	if (tooltips[currentTooltip][currentTooltipItem].pos=="bottom_left")  {
+		var ofTop = $(tooltips[currentTooltip][currentTooltipItem].itarget).offset().top - toolTipHeight;
+		var ofLeft = $(tooltips[currentTooltip][currentTooltipItem].itarget).offset().left;
+		$(".toolTip").css({top:ofTop+10+"px",left:ofLeft+"px",opacity:0,display:"block"}).animate({top:ofTop-10,opacity:1});
+	}
+	if (tooltips[currentTooltip][currentTooltipItem].pos=="right_center")  {
+		var ofTop = $(tooltips[currentTooltip][currentTooltipItem].itarget).offset().top + ($(tooltips[currentTooltip][currentTooltipItem].itarget).height()/2) - (toolTipHeight/2);
+		var ofLeft = $(tooltips[currentTooltip][currentTooltipItem].itarget).offset().left - 340;
+		$(".toolTip").css({top:ofTop+10+"px",left:ofLeft+"px",opacity:0,display:"block"}).animate({top:ofTop-10,opacity:1});
+	}
+
+	if (ofLeft<15) {
+		$(".toolTip")
+		$(".toolTip").css({left:"10px"});
+	}
+	var TTH = $(".toolTip").outerHeight();
+	var bottomDist = TTH+ofTop+20;
+	if (bottomDist>$(window).height()) {
+		if (tooltips[currentTooltip][currentTooltipItem].pos=="center_center") {
+			var ofTop = $(tooltips[currentTooltip][currentTooltipItem].itarget).offset().top + ($(window).height()/2) - (toolTipHeight/2);
+			$(".toolTip").stop(false,true).css({top:ofTop+"px",left:ofLeft+"px"});
+		}
+		if (tooltips[currentTooltip][currentTooltipItem].pos=="top_right") {
+			$(".toolTip").removeClass("top_right").addClass("right_center");
+			var ofTop = $(tooltips[currentTooltip][currentTooltipItem].itarget).offset().top + ($(tooltips[currentTooltip][currentTooltipItem].itarget).height()/2) - (toolTipHeight/2);
+			var ofLeft = $(tooltips[currentTooltip][currentTooltipItem].itarget).offset().left - 310;
+			$(".toolTip").stop(false,true).css({top:ofTop+"px",left:ofLeft+"px"});
+		}
+		if (tooltips[currentTooltip][currentTooltipItem].pos=="top_center") {
+			$(".toolTip").removeClass("top_center").addClass("left_center");
+			var ofTop = $(tooltips[currentTooltip][currentTooltipItem].itarget).offset().top + ($(tooltips[currentTooltip][currentTooltipItem].itarget).height()/2) - (toolTipHeight/2);
+			$(".toolTip").stop(false,true).css({top:ofTop+10+"px"});
+		}
+	}
+
+	currentTooltipItem++;
+};
+function skipToolTip(){
+	if (interuptedChains.length) {
+			if (currentTooltip!==false) {
+				if (currentTooltipItem<tooltips[currentTooltip].length) {
+					currentTooltipItem++;
+					interuptedChains.push({currentTooltip:currentTooltip,currentTooltipItem:currentTooltipItem});
+					clearTimeout(toolTipTimeout);
+				}
+			}
+
+			currentTooltipItem=interuptedChains[interuptedChains.length-1].currentTooltipItem;
+			currentTooltip=interuptedChains[interuptedChains.length-1].currentTooltip;
+			interuptedChains.pop();
+			toolTipTimeout = setTimeout(tooltip, 100);
+		} else {
+			if (currentTooltip!==false) {
+				if (currentTooltipItem<tooltips[currentTooltip].length) {
+					currentTooltipItem++;
+					tooltip();
+				}
+			}
+
+		}
+};
+function tooltip () {
+	return false;
+	
+	if (
+		currentTooltip
+		&& typeof tooltips[currentTooltip][currentTooltipItem] != "undefined"
+		&& $(tooltips[currentTooltip][currentTooltipItem].itarget).length
+		&& hidden_tips.indexOf(currentTooltip+"-"+currentTooltipItem) == -1
+		&& hide_tips===0
+		)
+		{
+			if (tooltips[currentTooltip][currentTooltipItem].mouseOnly===true) {
+				if (isMouseBased) {
+					showToolTip();
+				} else {
+					skipToolTip();
+				}
+				return false;
+			}
+			if (tooltips[currentTooltip][currentTooltipItem].touchOnly===true) {
+				if (iOS||!isMouseBased) {
+					showToolTip();
+				} else {
+					skipToolTip();
+				}
+				return false;
+			}
+			if (typeof tooltips[currentTooltip][currentTooltipItem].touchOnly == "undefined" && typeof tooltips[currentTooltip][currentTooltipItem].mouseOnly == "undefined") {
+				showToolTip();
+			}
+
+
+	} else {
+		skipToolTip();
+
+	}
+}
+var toolTipTimeout;
+var hidden_tips;
+var hide_tips=0;
+var hidden_tips_session = new Array();
+$(document).ready(function(){
+	hidden_tips = $("#hiddenTips").val().split(",");
+	if ($("#hide_tips").length) {
+	hide_tips = 1;
+	}
+
+	$("#toolTip").click(function(){
+		return false;
+	});
+	$("#dismissToolTip").click(function(){
+		$(".tooltipTarget").removeClass("tooltipTarget");
+		hidden_tips.push($(this).attr("showing"));
+		hidden_tips_session.push($(this).attr("showing"));
+		$.ajax({
+			  type: "POST",
+			  url: "adminUsersActions.php",
+			  data: "adminUsersAction=updateViewedTips&hidenTips="+hidden_tips,
+			  success: function(msg){
+	if (msg=="<script>window.location='/admin/';</script>") { window.location='/admin/login.php?m=3'; return false; }
+			  }
+		});
+		hideToolTips(true);
+		if ($("#bpe_text_dropship").length) {
+			$("#bpe_text_dropship textarea").focus();
+		}
+		return false;
+	});
+	$('#dontShowToolTipAgain').click(function(){
+		if ($(this).hasClass("checked")) {
+			$(this).removeClass("checked");
+		} else {
+			$(this).addClass("checked");
+		}
+		return false;
+	});
+});

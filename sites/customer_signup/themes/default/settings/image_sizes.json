@@ -1,0 +1,23 @@
+[
+	{
+		"name":"Small"
+		,"width": "120"
+		,"height": "auto"
+	}
+	,{
+		"name":"Medium"
+		,"width": "200"
+		,"height": "auto"
+		,"default": "true"
+	}
+	,{
+		"name":"Large"
+		,"width": "300"
+		,"height": "auto"
+	}
+	,{
+		"name":"Extra Large"
+		,"width": "800"
+		,"height": "auto"
+	}
+]

@@ -1,0 +1,215 @@
+function assignDarkMenu () {
+	$(document).click(function(){
+		$("#darkMenuOuter,.darkSubMenuOuter").fadeOut();
+		$("#statsWrapper").fadeTo(50,"1");
+	});
+	$("#urchinInner").hoverIntent(function(e){
+		hide_menus();
+		$("#darkMenuOuter").show();
+		darkScroll($("#darkScroll"));
+		$("#statsWrapper").fadeTo("slow","0.33");
+	},function(){ });
+	$("#darkMenuInner a").hoverIntent(function(){
+		if (!$(this).parents(".darkSubMenuOuter").length) {
+			$(".darkSubMenuOuter").hide();
+			$(".darkSubMenuOuter",$(this).parent()).show();	
+			darkScroll($(".darkSubMenuOuter",$(this).parent()));		
+		}
+	},function(){ });
+	$(".darkSubMenuInner").click(function(){
+		return false;
+	});
+}
+function newConvo (acceptLink) {
+
+
+		//$("#status").html("WORKING");
+		$("#newConvo").fadeIn(300);
+		$("#accept").attr("href",acceptLink);
+		
+	}
+$(document).ready(function(){
+	$("#ignore").click(function(){
+		$("#newConvo").fadeOut(500);
+		return false;
+	});	
+	
+});
+function randomString() {
+	var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+	var string_length = 5;
+	var randomstring = '';
+	for (var i=0; i<string_length; i++) {
+		var rnum = Math.floor(Math.random() * chars.length);
+		randomstring += chars.substring(rnum,rnum+1);
+	}
+	return randomstring;
+}
+function poll () {
+
+	if (!$("#checkoutPaneInner .listItemHighlight").length) {
+$("#checkoutPaneInner .insertTarget").load("shop.php?to_prevent_cache="+(new Date).getTime(),function(){
+			$("#checkoutPaneInner").lovelyScroll();
+
+			urchin();
+		});		
+	}
+	
+
+	var numberOfConvos = $(".responsiveListItem","#convos").length;
+	
+	$.ajax({
+		type: "GET",
+		url: "../livechat/actions/checkconvos.php?to_prevent_cache="+(new Date).getTime(),
+		success: function (msg) {
+			
+				$("#hiddenConvos").html(msg);
+				
+				var newConvos = $(".responsiveListItem","#hiddenConvos").length;
+				if (newConvos!=numberOfConvos) {
+					if (msg!=0) {
+						$('#convos').html(msg);					
+					} else {
+						if (numberOfConvos!=0) {
+							$('#convos').html(msg);
+						}
+					}
+					var numberOfConvos2 = $(".responsiveListItem","#convos").length;
+
+					if (numberOfConvos2!=numberOfConvos) {
+						if (numberOfConvos2!=0) {
+								setTimeout(function() {
+	//								$("#newmessage").each(function(){
+	//									this.Play();
+	//								});
+								}, 300);
+								acceptLink = $(".responsiveListItem:last",$("#convos")).attr("livechat-href");
+
+								//newConvo(acceptLink);
+						}
+						urchin();
+
+
+					}
+					if (numberOfConvos2<numberOfConvos) {
+						$("#viewLivechatLog").load("livechat.php",function(){
+							$("#chat_archived_wrap").show();
+				
+						});
+					}
+
+
+
+					$("#accept").click(function(){
+						$("#overlay").fadeOut(500);
+						$("#newConvo").fadeOut(500);
+					});
+				}
+				
+				
+		}
+	});
+
+
+}
+// urchin
+function urchin () {
+	var orders = $("#openOrders .responsiveListItem").length;
+	$("#ordersCounter").show();
+	$("#ordersCounter").html(orders);
+	if (orders===0) {
+	$("#ordersCounter").hide();	
+	}
+	var convos = $(".responsiveListItem",$("#convos")).length;
+	$("#livechatCounter").show();
+	var oldconvos=parseInt($("#livechatCounter").html());
+
+	$("#livechatCounter").html(convos);
+	if (convos===0) {
+	$("#livechatCounter").hide();	
+	}
+	var total = orders+convos;
+
+//	$("#urchinInner div").html(total);
+	if (window.fluid) { window.fluid.dockBadge = total; }
+	
+	if (!$("body").attr("original-title")) {
+		$("body").attr("original-title",document.title);
+	}
+	if (total!=0) {
+		document.title = "("+total+") "+$("body").attr("original-title");
+		$("#primaryNotify").html(total);
+		//$(".primaryNotify").remove();
+		$(".returnToLP").addClass("showingCounter").html(total);
+	} else {
+		document.title = $("body").attr("original-title");
+		$("#primaryNotify").hide();
+		//$(".primaryNotify").remove();
+		$(".returnToLP").removeClass("showingCounter").html("");
+	}
+	
+	if (total==0 && $("#urchin:visible").length) {
+		$("#statsWrapper").fadeTo(50,"1");
+		$("#urchin").fadeOut();
+		$("#darkMenuOuter,.darkSubMenuOuter").fadeOut();
+	}
+	if (total!=0 && !$("#urchin:visible").length) {
+		$("#urchin").fadeIn();
+	}
+	if (oldconvos!=convos&&convos!=0) {
+		if ($("#lpLivechat").length) {
+			$("#newlivechatplayer").jPlayer("play");		
+		}		
+	}
+}
+// end urchin
+var poller;
+var poller2;
+function livechat_init () {
+	
+	$("#checkoutPaneInner .insertTarget").load("shop.php?to_prevent_cache="+(new Date).getTime(),function(){
+			if ($("#checkoutPaneInner .insertTarget").html()=="redirect") {
+				window.location.href=$("#redirectOnExpire").val();
+			}
+			urchin();
+			$("#checkoutPaneInner").lovelyScroll();
+
+		});		
+	$.ajax({
+		type: "GET",
+		url: "../livechat/actions/showconvos.php?to_prevent_cache="+(new Date).getTime(),
+		success: function(msg) {
+	
+
+			if (msg!=0) {
+				$('#convos').html(msg);					
+			}
+			
+			if ($("#darkMenuOuter:visible").length) {
+				darkScroll($("#darkScroll"));
+			}			
+			$("a.convo",$("#convos")).unbind();
+	
+			$("a.convo",$("#convos")).click(function  () {
+				href= this.href;
+				rand = randomString();
+				window.open(href,rand,'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=311,height=349');
+				return false;
+			});
+			hidePaneTools();
+			urchin();
+			clearInterval(poller2);
+			poll();
+			poller2 = setInterval(poll, 10000);
+		}
+	});
+	$.ajax({
+		type: "GET",
+		url: "livechat.php?to_prevent_cache="+(new Date).getTime(),
+		success: function(msg) {
+			if (msg!=0) {
+				$('#viewLivechatLog').html(msg);					
+			}
+		}
+	});
+}

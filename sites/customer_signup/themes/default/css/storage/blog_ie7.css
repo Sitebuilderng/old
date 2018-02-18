@@ -1,0 +1,23 @@
+.ie7 #sidebar {
+	display: block;
+	float:left;
+	width:30%;
+	overflow: hidden;
+	padding:0;
+}
+.ie7 #blogContent {
+	float:left;
+	display: block;
+	width:70%;
+	overflow: hidden;
+	padding:0;
+}
+.ie7 #blogContent .bpe_image.Right_Image {
+	margin-right:0;
+}
+.ie7 #blogContent h1.blogTitle {
+	margin-right:0;
+}
+.ie7 .blogFilterCol ul  {
+	margin-bottom: 10px;
+}

@@ -1,0 +1,454 @@
+
+// Image Categories groups
+
+function editImagesCategory ($clicked) {
+	editMeListItem($clicked);
+	return false;
+}
+function deleteImagesCategoryPrep () {
+	if ($("#imagesCategoriesPaneInner .listItemHighlight").length) {
+prepDialogue("<h2>"+LangVars.Are_You_Sure+"</h2><p>"+LangVars.Delete_Images_Category_Text+"<p>",LangVars.Cancel,cancelDialogue,LangVars.Delete,deleteImagesCategory,false,true);
+	}
+}
+function renameImagesCategoryCallback() {
+	$("#imagesCategoriesList").load("pageActions.php?pageAction=showImagesCategories",function(){
+		$("#imagesCategoriesListForGals").html($("#imagesCategoriesList").html());
+		if ($("#imagesCategoriesList li").length==0) {
+			$("#filterByImagesCategory").hide();
+			$("#imagesCategoriesList").next().hide();
+			$("#imagesCategoriesList").hide();
+		}
+		if ($("#rightPaneImagesCategories .imagesCategoryItem").length===0) {
+			$("#rightPaneImagesCategories .noPages").show();
+		}
+		selectionTools();
+		cancelDialogue();
+		assignImagesCategoriesKeys();
+		saved();
+		$("#eventsGroupsPaneInner").lovelyScroll();
+	});
+	
+}
+function deleteImagesCategory () {
+	var Ids="[";
+	$("#imagesCategoriesPaneInner .listItemHighlight").each(function(){
+		if (Ids=="[") {
+		Ids+='"'+$(this).attr("images-category-id")+'"';
+		} else {
+		Ids+=',"'+$(this).attr("images-category-id")+'"';
+		}
+	});
+	Ids+="]";
+	working();
+	$.ajax({
+	  type: "POST",
+	  url: "pageActions.php",
+	  data: "pageAction=deleteImagesCategories&ids="+Ids,
+	  success: function(msg){
+if (msg=="<script>window.location='/admin/';</script>") { window.location='/admin/login.php?m=3'; return false; }
+
+		$("#imagesCategoriesList").load("pageActions.php?pageAction=showImagesCategories",function(){
+			$("#imagesCategoriesListForGals").html($("#imagesCategoriesList").html());
+			if ($("#imagesCategoriesList li").length==0) {
+				$("#filterByImagesCategory").hide();
+				$("#imagesCategoriesList").next().hide();
+				$("#imagesCategoriesList").hide();
+			}
+			if ($("#rightPaneImagesCategories .imagesCategoryItem").length===0) {
+				$("#rightPaneImagesCategories .noPages").show();
+			}
+			displayImagesCategories();
+			
+			if (!$('#filterByImagesCategory .filterBy.bpe_current').length) {
+				$("#showAllImages").trigger("click");
+			}
+			selectionTools();
+
+			cancelDialogue();
+			assignImagesCategoriesKeys();
+			saved();
+			$("#eventsGroupsPaneInner").lovelyScroll();
+		});
+
+	  }
+	});
+}
+function addImageCategory () {
+	$(document).unbind("click");
+	$(document).unbind("keyup");
+	$(document).unbind("keydown");
+	$(document).unbind("keypress");
+	$("#rightPaneImagesCategories .noPages").hide();
+	$("#rightPaneImagesCategories .addImagesCategory").show();
+	prepFancyLabelForms($("#rightPaneImagesCategories .addImagesCategory"));
+	$("#rightPaneImagesCategories .addImagesCategory .focus").focus();
+	function saveOrCancel () {
+		$("#rightPaneImagesCategories .addImagesCategory .focus").unbind("blur");
+		if ($("#rightPaneImagesCategories .addImagesCategory .focus").val()=="" || $("#rightPaneImagesCategories .addImagesCategory .focus").val()==" ") {
+			resetAddForms();
+			if ($("#rightPaneImagesCategories .imagesCategoryItem").length===0) {
+				$("#rightPaneImagesCategories .noPages").show();
+			}
+		} else {
+			working();
+			$.ajax({
+			  type: "POST",
+			  url: "pageActions.php",
+			  data: "pageAction=addImagesCategory&name="+encodeURIComponent($("#rightPaneImagesCategories .addImagesCategory .focus").val()),
+			  success: function(msg){
+	if (msg=="<script>window.location='/admin/';</script>") { window.location='/admin/login.php?m=3'; return false; }
+				postAddImageCat(false);
+			  }
+			});
+		}
+	}
+	$("#rightPaneImagesCategories .addImagesCategory .focus").unbind("blur").blur(function(){
+		saveOrCancel();
+		return false;
+	});
+	$(document).keyup(function(e){
+		if (e.keyCode==13) { // enter
+			saveOrCancel();
+			return false;
+		}
+	});
+	$(document).keydown(function(e){
+		if (e.keyCode==13) { // enter
+
+			return false;
+		}
+		if (e.keyCode==27) { // esc
+			saveOrCancel();
+			return false;
+		}
+	});
+}
+
+function displayImagesCategories () {
+
+	$("#imagesCategoriesPaneInner .insertTarget").html("");
+	$("#imagesCategoriesPaneInner .insertTarget").append("<div class='dropzone'><div></div></div>");
+	
+	hidePaneTools();
+
+	var c = 0;
+	$("#imagesCategoriesList a").each(function(){
+		$("#imagesCategoriesPaneInner .insertTarget").append("<div class='responsiveListItem imagesCategoryItem' images-category-id='"+$(this).attr("images-category-id")+"' title=\""+$(".overflowEllipsis",$(this)).html()+"\"><span class='overflowEllipsis'>"+$(".overflowEllipsis",$(this)).html()+"</span></div><div class='dropzone'><div></div></div>");
+		c++;
+	});
+	if (c==0) {
+		$("#imagesCategoriesPaneInner .insertTarget").append("<div class='noPages'>"+LangVars.No_Event_Groups+"</div>");
+	}
+
+	updateImagesCategoryFilterMenu();
+
+}
+function updateImagesCategoryFilterMenu() {
+	if ($("#imagesCategoriesList a").length) {
+		$("#rightPaneImages .filterBar").show();
+		$("#imagesPaneInner").addClass("withFilterBar");
+		$("#imagesFilterCategories").html("");
+		$("#imagesCategoriesList a").each(function(){
+			$("#imagesFilterCategories:hidden").show();
+			$("#imagesFilterCategories").append('<li><a href="#" class="filterBy filterLink" data-lang="'+htmlentities($(".overflowEllipsis",$(this)).html())+'" category-id="'+$(this).attr("images-category-id")+'"><span>'+htmlentities($(".overflowEllipsis",$(this)).html())+'</span></a></li>');
+		});
+	} else {
+		$("#rightPaneImages .filterBar").hide();
+		$("#imagesPaneInner").removeClass("withFilterBar");
+	}
+}
+function assignImagesCategoriesKeys () {
+	$(document).unbind("keydown");
+	$(document).unbind("keyup");
+	$(document).unbind("keypress");
+	assignSelectionKeys();
+	$(document).keyup(function (e) {
+		if (e.keyCode==13) { // enter
+			if ($("#rightPaneImagesCategories .listItemHighlight").length==1) {
+				editImagesCategory($("#imagesCategoriesPaneInner .listItemHighlight"));
+			}
+			return false;
+		}
+	});
+	$(document).keydown(function (e) {
+		if (e.keyCode==8) { // backspace
+			deleteImagesCategoryPrep();
+			return false;
+		}
+		if (e.keyCode==78) { // n
+			if (!metaDown) {
+				addImageCategory();
+				e.preventDefault();
+			}
+
+			return false;
+		}
+		if (e.keyCode==33) { // pageup
+			var pageH = $("#imagesCategoriesPaneInner").height();
+			$("#imagesCategoriesPaneInner").lovelyScrollMove(pageH);
+			return false;
+		}
+		if (e.keyCode==34) { // subscriberCategoriesPaneInner
+			var pageH = $("#imagesCategoriesPaneInner").height();
+			$("#imagesCategoriesPaneInner").lovelyScrollMove(-pageH);
+			return false;
+		}
+	});
+}
+function postAddImageCat(applyTo,catId) {
+	$("#filterByImagesCategory").show();
+	$("#imagesCategoriesList").next().show();
+	$("#imagesCategoriesList").show().load("pageActions.php?pageAction=showImagesCategories",function(){
+		$("#imagesCategoriesListForGals").html($("#imagesCategoriesList").html());
+		saved();
+		displayImagesCategories();
+		$("#imagesCategoriesPaneInner .responsiveListItem:first").addClass("listItemHighlight");
+		$("#imagesCategoriesPaneInner").lovelyScroll();
+		assignImagesCategoriesKeys();
+		assignSortableListItems($("#imagesCategoriesPaneInner"),"listItemHighlight","responsiveListItem");
+		
+		if (applyTo) {
+			$("#imagesPaneInner .listItemHighlight").each(function(){
+				
+				if (!$("#imagescategory"+catId,$(this)).length) {
+					$(this).append("<input type='hidden' id='imagescategory"+catId+"' value='"+catId+"' />")
+				}
+			
+				var catsCSV = new Array();
+				$("input[type=hidden]",$(this)).each(function(){
+					catsCSV.push($(this).val());
+				});
+				catsCSV.sort(function(b,a){return a-b});
+				var newCats="";
+				for (var i = 0; i < catsCSV.length; i++) {
+					if (i==0) {
+						newCats=catsCSV[i];
+					} else {
+						newCats=newCats+","+catsCSV[i];
+					}
+				};
+				$(this).attr("data-images-categories",newCats);
+			});
+			if ($("#quickAddImageGallery").is(":checked"))  {
+				$("#galleriesAdmin").load("galleriesActions.php?galleriesAction=show&to_prevent_cache="+(new Date).getTime(),function(){
+					$("#galleriesPaneInner .insertTarget").html($("#galleriesAdmin").html());
+					$("#galleriesPaneInner .insertTarget .galleryItem:first").addClass("listItemHighlight");
+					assignDragAssets($("#galleriesPaneInner .insertTarget"));
+					$("#galleriesPaneInner").lovelyScroll();
+					resetAddForms();
+					assignGalleryAdd();
+					assignGalleriesKeys();
+					saved();
+					selectionTools();
+				});
+			}
+		}
+		setTimeout(function() {
+			selectionTools();
+		}, 100);
+
+		resetAddForms();
+		cancelDialogue();
+	});
+	
+}
+function quickAddImageCategory(text) {
+	var addGal = $("#quickAddImageGallery").is(":checked");
+	if (addGal) {
+		var addGalStr = "&addgal=1";
+	} else {
+		var addGalStr = "";
+	}
+	if ($("body").hasClass("selectingAll")) {
+		var Ids="[";
+		$("#imagesPaneInner .responsiveListItem:not(.responsiveListItem.listItemHighlight)").each(function(){
+			if (Ids=="[") {
+			Ids+='"'+$(this).attr("id")+'"';
+			} else {
+			Ids+=',"'+$(this).attr("id")+'"';
+			}
+		});
+		Ids+="]";
+		var selectingAll = "&selectingAll=true";
+	} else {
+		var selectingAll = "";
+		var Ids="[";
+		$("#imagesPaneInner .listItemHighlight").each(function(){
+			if (Ids=="[") {
+			Ids+='"'+$(this).attr("id")+'"';
+			} else {
+			Ids+=',"'+$(this).attr("id")+'"';
+			}
+		});
+		Ids+="]";
+	}
+	
+	working();
+	$.ajax({
+	  type: "POST",
+	  url: "pageActions.php",
+	  data: "pageAction=quickAddImagesCategory&ids="+Ids+"&name="+encodeURIComponent(text)+addGalStr,
+	  success: function(msg){
+if (msg=="<script>window.location='/admin/';</script>") { window.location='/admin/login.php?m=3'; return false; }
+			postAddImageCat(true,msg);
+	  }
+	});
+}
+$(document).ready(function(){
+	$("#quickAddImagesCategories").click(function(){
+		prepDialogue("<h2>"+LangVars.Quick_Add+"</h2><p>"+LangVars.Quick_Add_Image_Info+"</p>",LangVars.Cancel,cancelDialogue,LangVars.Add,quickAddImageCategory,false,true,true,"quickAddImageCategory");
+		return false;
+	});
+	$("#manageImagesCategories").click(function(){
+		if (justScrolled) {return false;}
+		if (ignoreClickCatchup) {return false;}
+		//hidePanes();
+		$("input").unbind();
+		$("#loadingMask").show();
+		$(".assetPane").hide();
+		hide_iconbar_menus();
+		displayImagesCategories();
+		assignListPane($("#imagesCategoriesPaneInner"),editImagesCategory);
+//		assignSortableListItems($("#imagesCategoriesPaneInner"),"listItemHighlight","responsiveListItem");
+		$("#imagesCategoriesPaneInner").css("width","auto");
+		showPane($("#rightPaneImagesCategories"),false,true);
+		setTimeout(function() {$("#imagesCategoriesPaneInner").lovelyScroll();}, 400);
+
+		assignImagesCategoriesKeys();
+		$("#loadingMask").hide();
+		return false
+	});
+	$("#iconbarDeleteImagesCategory").click(function(){
+		if (justScrolled) {return false;}
+		if (ignoreClickCatchup) {return false;}
+		deleteImagesCategoryPrep();
+		return false;
+	});
+	$("#iconbarAddImagesCategory").click(function(){
+		if (justScrolled) {return false;}
+		if (ignoreClickCatchup) {return false;}
+		addImageCategory();
+		return false;
+	});
+	$("#imagesCategoriesList").click(function(e){
+		var $target=false;
+		if ($(e.target).hasClass("overflowEllipsis")) {
+			$target = $(e.target).parent();
+		}
+		if ($(e.target).hasClass("bpe_selection_tool")) {
+			$target = $(e.target);
+		}
+		if (!$target) {
+			return false;
+		}
+
+		if (!$target.hasClass("greyedOut")) {
+			if ($target.hasClass("bpe_current")) {
+				var action = "removeFromCat";
+			} else {
+				var action = "addToCat";
+			}
+			$clicked = $target;
+			var catId = $target.attr("images-category-id");
+			if ($("body").hasClass("selectingAll")) {
+				var Ids="[";
+				$("#imagesPaneInner .responsiveListItem:not(.responsiveListItem.listItemHighlight)").each(function(){
+					if (Ids=="[") {
+					Ids+='"'+$(this).attr("id")+'"';
+					} else {
+					Ids+=',"'+$(this).attr("id")+'"';
+					}
+				});
+				Ids+="]";
+				var selectingAll = "&selectingAll=true";
+			} else {
+				var selectingAll = "";
+				var Ids="[";
+				$("#imagesPaneInner .listItemHighlight").each(function(){
+					if (Ids=="[") {
+					Ids+='"'+$(this).attr("id")+'"';
+					} else {
+					Ids+=',"'+$(this).attr("id")+'"';
+					}
+				});
+				Ids+="]";
+			}
+			working();
+			$.ajax({
+			  type: "POST",
+			  url: "pageActions.php",
+			  data: "pageAction=changeImagesInCategories&ids="+Ids+"&action="+action+"&cat="+catId+selectingAll,
+			  success: function(msg){
+		if (msg=="<script>window.location='/admin/';</script>") { window.location='/admin/login.php?m=3'; return false; }
+				$("#imagesPaneInner .listItemHighlight").each(function(){
+					if (action=="addToCat") {
+						if (!$("#imagescategory"+catId,$(this)).length) {
+							$(this).append("<input type='hidden' id='imagescategory"+catId+"' value='"+catId+"' />")
+						}
+					} else {
+						$("#imagescategory"+catId,$(this)).remove();
+					}
+					var catsCSV = new Array();
+					$("input[type=hidden]",$(this)).each(function(){
+						catsCSV.push($(this).val());
+					});
+					catsCSV.sort(function(b,a){return a-b});
+					var newCats="";
+					for (var i = 0; i < catsCSV.length; i++) {
+						if (i==0) {
+							newCats=catsCSV[i];
+						} else {
+							newCats=newCats+","+catsCSV[i];
+						}
+					};
+					$(this).attr("data-images-categories",newCats);
+				});
+				selectionTools();
+				saved();
+			  }
+			});
+
+		}
+		return false;
+	});
+	$("#imagesFilterCategories,#showAllImages,#showImagesWithoutCat").click(function(e){
+		var $target=false;
+		if ($(e.target).parent().hasClass("filterLink")) {
+			$target = $(e.target).parent();
+		}
+		if ($(e.target).hasClass("filterLink")) {
+			$target = $(e.target);
+		}
+		if (!$target) {
+			return false;
+		}
+
+		$("#imagesFilterCategories a,#showAllImages,#showImagesWithoutCat").removeClass("bpe_current");
+		$target.addClass("bpe_current");
+		$(".target",$("#imagesFilterCategories").parents(".subHeaderLeftMenuItem")).text($target.attr("data-lang"));
+		cat=$target.attr("category-id");
+		working();
+		
+		$.ajax({
+		  type: "POST",
+		  url: "pageActions.php",
+		  data: "pageAction=filterImages&cat="+cat,
+		  success: function(msg){
+			if (msg=="<script>window.location='/admin/';</script>") { window.location='/admin/login.php?m=3'; return false; }
+			$(".bpe_images,#bpe_images,#bpe_dropship_images .insertTarget,#imagesPaneInner .insertTarget").html(msg);
+			assignListLasso($("#imagesPaneInner"));
+			assignListPane($("#imagesPaneInner"),doNothing);
+			assignDragAssets($("#imagesPaneInner .insertTarget"));
+			if (!($("body").hasClass("storageDraggable"))) {
+				assignSortableListItems($("#imagesPaneInner"),"listItemHighlight","contentImage");		
+			}
+			setTimeout(function() {
+				$("#imagesPaneInner").lovelyScroll(scrollImagesBottom);
+			}, 400);
+			saved();
+		  }
+		});
+		
+		return false;
+	});
+});

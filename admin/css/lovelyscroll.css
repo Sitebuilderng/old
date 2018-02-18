@@ -1,0 +1,79 @@
+.iScrollHorizontalScrollbar {
+	
+}
+.iScrollVerticalScrollbar {
+	right:5px;
+	bottom:3px;
+	top:0px;
+	position:absolute;
+	z-index:10;
+	width:10px;
+}
+.rightPane .iScrollVerticalScrollbar {
+	top:88px;
+}
+.withSectionTabs.rightPane .iScrollVerticalScrollbar {
+	top:138px;
+}
+.rightPane .paneTools .iScrollVerticalScrollbar {
+	top:3px;
+}
+.rightPane .subHeaderLeftMenuItem .iScrollVerticalScrollbar {
+	top:3px;
+}
+.iScrollVerticalScrollbar:hover .iScrollIndicator,.iScrollIndicator:active {
+	width:10px;
+	background:rgba(0,0,0,0.5);
+	
+}
+.iScrollIndicator {
+	width:4px;
+	float:right;
+	background:rgba(0,0,0,0.2);
+	height:100%;
+	border-radius:15px;
+}
+.iScrollBothScrollbars {
+	
+}
+/*.lovelyScrollTrack {
+	position: absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	width:16px;
+}
+.mousebased .lovelyScrollTrack:hover .lovelyScrollBar
+,.mousebased .lovelyScrollBar.ui-draggable-dragging {
+	width:12px;
+	border-radius: 14px;
+	left:0px;
+}
+.lovelyScrollBar {
+	margin:4px 0px;
+	border-radius: 4px;
+	width:3px;
+	background: rgba(0,0,0,0.4);
+	border:1px solid rgba(255,255,255,0.1);
+	position: absolute;
+	top:0;
+	left:8px;
+}
+.pagesScroll .lovelyScrollTrack {
+	top:40px;
+}
+.withTitleBar .pagesScroll .lovelyScrollTrack
+,.withTitleBar .textEditingArea .lovelyScrollTrack {
+	top:84px;
+}
+.withTitleBar.withoutCleverFilterBar .pagesScroll .lovelyScrollTrack {
+	top:45px;
+}
+*/
+.lovelyScrollContents {
+	top:0;
+	left:0;
+	right:0;
+	position: absolute;
+}
+*/

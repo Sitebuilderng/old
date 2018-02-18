@@ -1,0 +1,258 @@
+
+
+
+	<div class="clearfix">
+		<div id="stats" class="v2">
+			<h2 id="statsHeading"><strong>Statistics for 1<sup>st</sup> - 4<sup>th</sup> September</strong><br/>Comparisons taken from previous month</h2>
+			<div class="statsBox fullWidth">
+				<p id="hitsSparksTitle"><strong>Hits, Visitors / Day</strong></p>
+				<div id="hitsSparksFlot"><div style="width:100%;height:120px"></div></div>
+				<div id="hitsSparksFlotLegend"></div>
+			</div>
+			<div class="statsColFifth">
+				<div class="statsBox clearfix">			
+					<p id="totalHitsTitle">Total <strong>Hits</strong></p>
+					<p id="totalHits" class="statsNumbers"><span class="statNumbersLeft"><strong>21</strong><br/>0</span> <span class="statTrend ">0%</span></p>
+				</div>
+			</div>
+			<div class="statsColFifth lastIfHalf">
+				<div class="statsBox clearfix">			
+					<p id="totalVisitorsTitle">Total <strong>Visitors</strong></p>
+					<p id="totalVisitors" class="statsNumbers"><span class="statNumbersLeft"><strong>1</strong><br/>0</span> <span class="statTrend ">0%</span></p>
+				</div>
+			</div>
+			<div class="statsColFifth">
+				<div class="statsBox clearfix">			
+					<p id="totalHitsDayTitle">Avg. <strong>Hits / Day</strong></p>
+					<p id="totalHitsDay" class="statsNumbers"><span class="statNumbersLeft"><strong>5.3</strong><br/>0</span> <span class="statTrend ">0%</span></p>
+				</div>
+			</div>
+			<div class="statsColFifth lastIfHalf">
+				<div class="statsBox clearfix">	
+					<p id="totalVisitorsDayTitle">Avg. <strong>Visitors / Day</strong></p>
+					<p id="totalVisitorsDay" class="statsNumbers"><span class="statNumbersLeft"><strong>0.3</strong><br/>0</span> <span class="statTrend ">0%</span></p>
+				</div>
+			</div>
+			<div class="statsColFifth last">
+				<div class="statsBox clearfix">	
+					<p id="totalHitsVisitorsTitle">Hits <strong>Per Visitor</strong></p>
+					<p id="hitsPerVisitorDay" class="statsNumbers"><span class="statNumbersLeft"><strong>21</strong><br/>0</span> <span class="statTrend ">0%</span></p>								
+				</div>
+			</div>
+			<script type="text/javascript">
+			
+			$(function () {
+
+			    var thisMonthHits = {
+				    label: "Hits",
+				    data: [[1,0],[2,0],[3,0],[4,21],[5,-1],[6,-1],[7,-1],[8,-1],[9,-1],[10,-1],[11,-1],[12,-1],[13,-1],[14,-1],[15,-1],[16,-1],[17,-1],[18,-1],[19,-1],[20,-1],[21,-1],[22,-1],[23,-1],[24,-1],[25,-1],[26,-1],[27,-1],[28,-1],[29,-1],[30,-1],[31,-1]]
+					,color:"rgb(255,148,148)"
+					,shadowSize:1
+				  };
+	
+				var thisMonthVisits = {
+				    label: "Visitors",
+				    data: [[1,0],[2,0],[3,0],[4,1],[5,-1],[6,-1],[7,-1],[8,-1],[9,-1],[10,-1],[11,-1],[12,-1],[13,-1],[14,-1],[15,-1],[16,-1],[17,-1],[18,-1],[19,-1],[20,-1],[21,-1],[22,-1],[23,-1],[24,-1],[25,-1],[26,-1],[27,-1],[28,-1],[29,-1],[30,-1],[31,-1]]
+					,color:"rgb(110,209,255)"
+					,shadowSize:1
+				  };
+	
+				var lastMonthHits = {
+				    data: [[1,0],[2,0],[3,0],[4,0],[5,0],[6,0],[7,0],[8,0],[9,0],[10,0],[11,0],[12,0],[13,0],[14,0],[15,0],[16,0],[17,0],[18,0],[19,0],[20,0],[21,0],[22,0],[23,0],[24,0],[25,0],[26,0],[27,0],[28,0],[29,0],[30,0],[31,0]]
+					,color:"rgba(255,148,148,0.3)"
+					,shadowSize:0
+				  };
+	
+				var lastMonthVisits = {
+				    data: [[1,0],[2,0],[3,0],[4,0],[5,0],[6,0],[7,0],[8,0],[9,0],[10,0],[11,0],[12,0],[13,0],[14,0],[15,0],[16,0],[17,0],[18,0],[19,0],[20,0],[21,0],[22,0],[23,0],[24,0],[25,0],[26,0],[27,0],[28,0],[29,0],[30,0],[31,0]]
+					,color:"rgba(110,209,255,0.3)"
+					,shadowSize:0
+				  };
+
+			    $.plot($("#hitsSparksFlot div"), [ lastMonthVisits, lastMonthHits, thisMonthVisits, thisMonthHits ], {
+					grid: {
+					    show: true
+					    ,color: "#ABABAB"
+					    ,backgroundColor: null
+					    ,borderWidth: 0
+		
+					}
+					,yaxis: {
+					    show: true
+						,min:0
+					}
+					,xaxis: {
+					    show: true
+						,ticks:31
+						,tickDecimals:0
+					  }
+					,legend: {
+					    show: true
+					    ,noColumns: 4
+					    ,backgroundOpacity: 0
+						,container: $("#hitsSparksFlotLegend")
+					  }
+		
+				});
+			});
+			
+			</script>
+
+			<div class="clear"></div>
+			<div class="statsColQuart">
+				<div class="statsBox clearfix">
+					<p id="browserTitle">Top 5 <strong>Browsers</strong></p>
+					<div id="top5Browsers"></div>
+					<div id="top5browsersLegend"></div> <!-- end #top5browsersLegend -->
+					<script type="text/javascript">
+					var pieColour = new Array();
+					pieColour[1] = "#ffd234";
+					pieColour[2] = "#6ed1ff";
+					pieColour[3] = "#ff9494";
+					pieColour[4] = "#9fff75";
+					pieColour[5] = "#cf8bff";
+					
+					$(function () {
+
+						var top5Browsers = [
+												{ 
+						label: "Chrome"
+						, data: 21
+						,color:pieColour[1]
+						}						
+						  ];
+					    $.plot($("#top5Browsers"), top5Browsers, {
+							series: {
+							     pie: { 
+					                show: true
+					                ,innerRadius: 0.8
+					            }
+					        }
+						 	,legend: {
+						        show: true
+								,backgroundOpacity: 0
+								,container:$("#top5browsersLegend")
+						    }
+
+						});
+					});
+					
+					</script>
+				</div>
+			</div>
+			<div class="statsColQuart lastIfHalf">
+				<div class="statsBox clearfix">
+	
+					<p id="osTitle"><strong>Operating System</strong></p>
+					<div id="osChart"></div>
+					<div id="osChartLegend"></div> <!-- end #top5browsersLegend -->
+					<script type="text/javascript">
+					
+					$(function () {
+
+						var osChart = [
+												{ label: "Windows NT 4.0", data: 12,color:pieColour[1]},												{ label: "Linux", data: 9,color:pieColour[2]}						
+						  ];
+					    $.plot($("#osChart"), osChart, {
+							series: {
+							     pie: { 
+					                show: true
+					                ,innerRadius: 0.8
+					            }
+					        }
+						 	,legend: {
+						        show: true
+								,backgroundOpacity: 0
+								,container:$("#osChartLegend")
+						    }
+
+						});
+					});
+					
+					</script>
+
+				</div>
+			</div>
+
+			<div class="statsColQuart">
+				<div class="statsBox clearfix">
+
+					<p id="sourceTitle"><strong>Visit source</strong></p>
+						<div id="sourceChart"></div>
+						<div id="sourceChartLegend"></div>
+						<script type="text/javascript">
+						
+						$(function () {
+
+							var sourceChart = [
+														{ label: "This Site", data: 21,color:pieColour[1]}							
+							  ];
+						    $.plot($("#sourceChart"), sourceChart, {
+								series: {
+								     pie: { 
+						                show: true
+						                ,innerRadius: 0.8
+						            }
+						        }
+							 	,legend: {
+							        show: true
+									,backgroundOpacity: 0
+									,container:$("#sourceChartLegend")
+							    }
+
+							});
+						});
+						
+						</script>
+				</div>
+			</div>
+			<div class="statsColQuart last lastIfQuart">
+				<div class="statsBox clearfix">
+					<p id="engineTitle">Top 5 <strong>Search engines</strong></p>
+					<div id="engineChart"></div>
+					<div id="engineChartLegend"></div>
+					<script type="text/javascript">
+					
+					$(function () {
+
+						var engineChart = [
+						
+						  ];
+					    $.plot($("#engineChart"), engineChart, {
+							series: {
+							     pie: { 
+					                show: true
+					                ,innerRadius: 0.8
+					            }
+					        }
+						 	,legend: {
+						        show: true
+								,backgroundOpacity: 0
+								,container:$("#engineChartLegend")
+						    }
+
+						});
+					});
+					
+					</script>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="statsColHalf">
+				<div class="statsBox clearfix">
+					<p id="topPagesTitle">Top <strong>Webpages</strong></p>
+					<div id="topPagesList">
+																		<p class=""><a href="http://epicmovieton.com.app.sitebuilder.com.ng/" title="-"><span class="pageListNumber">21</span><span class="overflowEllipsis">-</span></a></p>
+																	</div>
+				</div>
+			</div>
+			<div class="statsColHalf last">
+				<div class="statsBox clearfix">
+	
+					<p id="topReferrersTitle">Top <strong>Referrers</strong></p>
+					<div id="topReferrersList">
+											</div>
+				</div>
+			</div>
+		</div>
+	</div>

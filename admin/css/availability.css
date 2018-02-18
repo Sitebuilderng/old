@@ -1,0 +1,1195 @@
+.cms-boooking-product-quantities {
+	padding-bottom:15px;
+}
+.cms-boooking-product-quantities h3 {
+	margin:0 0 5px;
+	font-size:20px;
+	line-height:24px;
+	font-weight:bold;
+}
+
+.cms-booking-product-dates {
+	float:left;
+	width:75%;
+	height:90px;
+	padding-top:8px;	
+	padding-left:30px;
+	box-sizing:border-box;
+	border-left:1px solid #eee;
+}
+.cms-booking-product-dates h3 {
+	margin:0;text-align:center;
+	font-size:14px;line-height:20px;
+	font-weight:700;
+	padding-bottom:10px;
+	text-transform:uppercase;
+}
+.cms-booking-product-next-month {
+	float:right;
+}
+.cms-booking-product-prev-month {
+	float:left;
+}
+.cms-booking-product-nav  {
+	text-transform:uppercase;
+	font-size:14px;line-height:20px;
+}
+.cms-booking-product-dates-inner {
+	white-space:nowrap;
+	 display:inline-block;
+	height:70px;
+	overflow:auto;
+	-webkit-overflow-scrolling: touch; 
+	width:100%;
+	position:relative;
+}
+
+.cms-booking-product-dates-inner::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.cms-booking-product-dates-inner::-webkit-scrollbar:horizontal {
+    height: 14px;
+}
+
+.cms-booking-product-dates-inner::-webkit-scrollbar-thumb:horizontal {
+    border-radius: 8px;
+    border: 2px solid white; /* should match background, can't be transparent */
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.cms-booking-product-dates-inner::-webkit-scrollbar-track:horizontal { 
+    background-color: #fff; 
+    border-radius: 8px; 
+} 
+
+
+.cms-booking-product-date {
+	height:50px;
+	width:50px;
+	text-align:left;
+	font-size:20px;
+	line-height:24px;
+	display:inline-block;
+	border:2px solid #ccc;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	background:#C4C4C4;
+	color:#FFF;
+	position:relative;
+	overflow:hidden;
+	cursor:default;
+	margin:0 2px 0 0;
+	-webkit-user-select: none;
+	    -khtml-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+}
+.cms-booking-product-date.cms-booking-product-available.cms-booking-product-toomany
+,.cms-booking-product-date.cms-booking-product-available.cms-booking-product-toomany.cms-booking-product-selected {
+	background:#C4C4C4;
+	border:2px solid #ccc;
+	color:#FFF;
+}
+.cms-booking-product-date.cms-booking-product-available {
+	background:#FFF;
+	color:#000;
+	border:2px solid #555;
+	cursor:pointer;
+}
+.cms-booking-product-date.cms-booking-product-history,	.cms-booking-product-date.cms-booking-product-history.cms-booking-product-available {
+	opacity:0.3;
+	background:#ccc;
+	color:#333;
+}
+.cms-booking-product-date.cms-booking-product-available.cms-booking-product-selected {
+	background:#0093EF;
+	color:#fff;
+	border:2px solid #0093EF;
+	cursor:pointer;
+}
+.cms-booking-product-date-weekday {
+	position:absolute;
+	top:3px;
+	left:3px;
+	font-size:11px;
+	line-height:11px;
+	text-transform:uppercase;
+}
+.cms-booking-product-date-day {
+	position:absolute;
+	bottom:3px;
+	left:3px;
+	text-transform:uppercase;
+}
+.cms-booking-product-qty {
+	float:left;
+	width:50%;
+	padding-right:10px;
+	box-sizing:border-box;
+	font-size:13px;
+	line-height:16px;
+	margin-bottom:4px;
+	margin-top:10px;
+	
+}
+
+.cms-booking-product-qty.cms-booking-qty-last-of-three {
+	margin-top:10px;
+}
+	
+	@media (max-width:1000px) {
+		.cms-booking-product-qty {
+			width:100%;
+		}
+	}
+.cms-booking-product-input-button {
+	box-sizing:border-box;
+	width:100%;
+	padding:0 30px;
+	position:relative;
+	border:1px solid #ccc;
+	border-radius:4px;overflow:hidden;
+}
+.cms-booking-qty-button {
+	-webkit-user-select: none;
+	    -khtml-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+	position:absolute;
+	top:0px;
+	left:0px;
+	botttom:0px;
+	width:30px;
+	height:30px;
+	background:#ccc;
+	color:#fff;
+	text-align:center;
+	font-size:30px;
+	line-height:23px;
+	cursor:pointer;
+}
+.cms-booking-qty-button:hover {
+	background:#888;
+}
+.cms-booking-qty-plus {
+	right:0px;
+	left:auto;
+}
+.cms-booking-product-qty input {
+	width:100%;
+	box-sizing:border-box;
+	font-size:14px;
+	line-height:30px;
+	margin:0;
+	padding:0px 10px;
+	text-align:center;
+	height:30px;
+	border-radius:4px;
+	outline:0;
+	border:none;
+}
+.cms-booking-product-qty input:focus {
+	border:none;
+	outline:0;
+	box-shadow:none;
+}
+.cms-booking-product-total {
+	clear:both;
+	padding:20px 0 0
+}
+.cms-booking-product-total-surcharge {
+	margin:0 0 10px;
+	color:#000;
+	font-weight:500;
+	font-size:14px;
+	display:none;
+}
+.cms-booking-product {
+	padding:10px 0;
+}
+.cms-booking-product:first-child {
+	
+}
+.cms-booking-product-total-price {
+	margin:5px 0;
+	font-size:22px;
+	color:#000;
+	font-weight:500;
+}
+
+@media (max-width:480px) {
+	.cms-boooking-product-quantities {
+		float:none;
+		width:100%;
+		border:none;
+	}
+	.cms-booking-product-dates {
+		float:none;
+		width:100%;
+		border:none;
+		padding-left:0
+	}
+	.cms-booking-product {
+		padding-bottom:30px;
+		margin-bottom:20px;
+	}
+}
+
+/*
+END ADD BOOKING
+*/
+#deleteRate {
+	text-decoration:none;
+	margin:10px 0;
+	padding:1px 15px;
+	float:left;
+	font-weight:bold;
+	border-radius:20px;
+	background:#FF0C00;
+	color:#fff;
+	display:block;
+}
+#deleteRate:hover {
+	background:#FF0C00;	
+}
+#bookingAvailabilityOuter,#bookingsOuter {
+	-webkit-perspective:500px;
+	position:fixed;
+	top:0%;
+	left:0%;
+	right:0%;
+	bottom:0%;
+	z-index:20000;
+	display:none;
+}
+#bookingsLeft {
+	padding:80px 30px 30px 30px;
+	width:70%;
+	top:0px;
+	left:0px;
+	bottom:0px;
+	position:absolute;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	overflow:auto;
+	
+}
+#productList {
+	text-align:center;
+}
+#productList select {
+	font-size:16px;
+	margin-top:8px;
+}
+#printTitle {
+	display:none;
+}
+#bookingsRight {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	padding:30px 30px 30px 30px;
+	width:30%;
+	top:0px;
+	right:0px;
+	bottom:0px;
+	position:absolute;
+	background:#EAEAEA;
+	overflow:auto;
+}
+#bookingsRight li {
+	padding:5px 10px;
+	border:1px solid #ccc;
+	background:#fff;
+	border-radius:4px;
+	font-size:12px;
+	color:#000;
+	cursor:pointer;
+}
+#bookingsRight li.bookingname {
+	border:none;
+	padding:0;
+	font-weight:bold;
+	font-size:16px;
+	background:none;
+	padding:10px 0 5px;
+}
+#closeBookingsRight {
+	display:none;
+	width:45px;
+	height:45px;
+	position:absolute;
+	top:5px;
+	right:5px;
+}
+#closeBookingsRight:after {
+	position: absolute;
+	top:8px;
+	left:8px;
+	width:35px;
+	height:35px;
+	font-family: "ssicons";
+	font-size: 20px;
+	line-height: 20px;
+	content:"X";
+	color:#000;
+}
+#bookingsRightAddBooking {
+	display:none;
+}
+#bookingsTabs {
+	margin-bottom:40px;
+}
+#bookingsTabs a {
+	float:left;
+	border:1px solid #ccc;
+	padding:3px 10px;
+	width:50%;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	text-align:center;
+}
+#editBooking {
+	display:none;
+}
+#bookingsTabs a.disabled {
+	color:#ccc;
+}
+#bookingsTabs a:hover {
+	background:none;
+	text-decoration:none;
+}
+#bookingsTabs a.currenttab,#bookingsTabs a.currenttab:hover {
+	background:#333;
+	color:#fff;
+}
+#bookingsTabs a:first-child {
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+#bookingsTabs a.last {
+	border-left:0;
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+@media (max-width:800px) {
+	#closeBookingsRight {
+		display:block;
+	}
+	#bookingsLeft {
+		width:100%;
+	}
+	#bookingsRight {
+		display:none;
+		width:100%;
+	}
+	#productList {
+		clear:both;
+	}
+}
+.noBookings {
+	margin:20px 0;
+	font-weight:bold;
+	color:#777;
+	text-transform:uppercase;
+}
+.daysInBooking span {
+	border:2px solid #ccc;
+	font-size:11px;
+	float:left;
+	line-height:12px;
+	padding:0px 4px;
+	margin-bottom:1px;
+	margin-right:5px;
+}
+.daysInBooking span.currentDayInDays {
+	background:#333;
+	color:#fff;
+	border:2px solid #000;
+}
+#bookingAvailability,#bookings {
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	background:#fff;
+	opacity:0;
+	transform: translateY(40px) rotateX(-10deg);
+	-webkit-transform: translateY(40px) rotateX(-10deg);
+	-moz-transform: translateY(40px) rotateX(-10deg);
+
+	transform-origin:100% 0;
+	-webkit-transform-origin:100% 0;
+	-moz-transform-origin:100% 0;
+    transition: all 1s;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+}
+#bookingAvailability.visible,#bookings.visible {
+	transform: translateY(0px) rotateX(0deg);
+	-webkit-transform: translateY(0px) rotateX(0deg);
+	-moz-transform: translateY(0px) rotateX(0deg);
+	opacity:1;	
+}
+#bookingAvailabilityToolbar {
+	overflow:auto;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	padding:3px 0;
+	height:38px;
+	background:#333;
+	text-align:center;
+}
+
+#bookingAvailabilityToolbar.greyedOut #bookingAvailabilityToolbarInner * {
+	opacity:0.6;
+}
+#bookingAvailabilityToolbar.greyedOut #bookingAvailabilityToolbarInner #manageRates {
+	opacity:1;
+}
+#bookingAvailabilityInner,#bookingsInner {
+	position:absolute;
+	top:44px;
+	left:0;
+	right:0;
+	bottom:0;
+	padding:80px 30px 30px;
+	box-sizing:border-box;
+	overflow:auto;
+	-webkit-overflow-scrolling: touch;
+	-webkit-touch-callout: none;
+	    -webkit-user-select: none;
+	    -khtml-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+}
+#bookings #bookingsInner {
+	top:0;
+}
+#manageRates {
+	float:left;
+	display:inline-block;
+	border-radius:3px;
+	background:none;
+	border:1px solid #ccc;
+	padding:9px;
+	margin-left:30px;
+	position:relative;
+	font-size:14px;
+	color:#fff;
+	font-weight:600;
+	cursor:pointer;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#bookingAvailabilityClose,#bookingsClose {
+	float:left;
+	border-radius:4px;
+	padding:8px 14px;
+	float:left;
+	font-weight:600;
+	font-size:14px;
+	cursor:pointer;
+}
+.bookingAvailabilityYears {
+	float:right;
+	font-size:20px;
+	line-height:24px;
+	position:relative;
+	padding-right:5px;
+	padding-left:5px;
+	color:#CFCFCF;
+	margin-top:7px;
+}
+#bookingAvailabilityCurrent {
+	font-weight:600;
+	color:#000;
+}
+#bookingAvailabilityNext,#bookingAvailabilityPrev {
+	cursor:pointer;
+}
+#bookingAvailabilityNext {
+	margin-right:10px;
+}
+#bookingAvailabilityNext:after {
+	content:"";
+	position:absolute;
+	top:5px;
+	right:-12px;
+	border:7px solid transparent;
+	border-left-color:#CFCFCF;
+}
+#bookingAvailabilityPrev:after {
+	content:"";
+	position:absolute;
+	top:5px;
+	left:-12px;
+	border:7px solid transparent;
+	border-right-color:#CFCFCF;
+}
+#bookingAvailabilityTitleBar {
+	position:absolute;
+	top:30px;
+	left:30px;
+	right:30px;
+}
+#bookingAvailabilityInner h1 {
+	text-align:center;
+	margin:5px 200px;
+	font-size:17px;
+	line-height:20px;
+	font-weight:600;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+.availabilityMonth {
+	float:left;
+	padding-top:35px;
+	box-sizing:border-box;
+	position:relative;
+}
+.availabilityMonth h2 {
+	text-align:center;
+	border:none;
+	font-size:16px;
+	color:#999;
+	font-weight:500;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	margin:0;
+}
+.availabilityMonth table {
+	width:100%;
+	height:100%;
+}
+.availabilityMonth th {
+	text-align:center;
+	font-weight:600;
+	font-size:11px;
+	color:#999;
+	vertical-align:bottom;
+	padding:0;
+	height:12px;
+}
+.availabilityMonth td {
+	position:relative;
+	padding:2px;
+	text-align:center;
+	vertical-align:middle;
+	background:#E0E0E0;
+	border:1px solid #fff;
+	cursor:pointer;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.availabilityMonth td.current:after {
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	content:"";
+	border:2px solid #000;
+}
+.availabilityMonth td.current_add:after {
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	content:"";
+	border:2px solid #0065FF;
+}
+.availabilityMonth td.current_add.cms-booking-product-toomany:after {
+	border:none;
+}
+.availabilityMonth td.colour0 {
+	background:#C2FF87;
+}
+.availabilityMonth td.colour1 {
+	background:#FFF287;
+}
+.availabilityMonth td.colour2 {
+	background:#FFC073;
+}
+.availabilityMonth td.colour3 {
+	background:#FF9867;
+}
+.availabilityMonth td.colour4 {
+	background:#FF4F4F;
+}
+.availabilityMonth td.colourblue {
+	background:#EC9FFE;
+}
+.availabilityMonth td.cms-booking-product-toomany {
+	color:#999 !important;
+	background:#E0E0E0 !important;
+}
+#createBooking a,#createBooking a:hover 
+,#saveBooking a,#saveBooking a:hover 
+{
+	padding:5px 10px;
+	background:#105D99;
+	color:#fff;
+	font-weight:500;
+	font-size:14px;
+	border-radius:5px;
+	text-decoration:none;
+}
+.addBookingTextLabel {
+	display:block;
+	float:left;
+	width:50%;
+	padding:0 10px 10px 0px;
+	box-sizing:border-box;
+}
+.addBookingTextLabel input {
+	width:100%;
+	box-sizing:border-box;
+	font-size:12px;
+	line-height:18px;
+	margin:0;
+	padding:0px 10px;
+	text-align:left;
+	height:25px;
+	border-radius:4px;
+	outline:0;
+	border:none;
+}
+.availabilityDragBSealed:before 
+,.availabilityDragASealed:before {
+	content:"";
+	position:absolute;
+	top:50%;
+	margin-top:-9px;
+	right:1px;
+	width:1px;
+	height:1px;
+	border:8px solid transparent;
+	border-right:8px solid #9e9e9e;
+	display:block;
+}
+.availabilityDragASealed:before {
+	border:8px solid transparent;
+	border-left:8px solid #9e9e9e;
+	right:auto;
+	left:1px;
+}
+
+.availabilityMonth td.block_end:before
+,.availabilityMonth td.availabilityDragASealed.block_end:before
+,.noblockends .availabilityMonth td.availabilityDragBSealed.block_end:before
+,.availabilityMonth td.block_start:before
+ {
+	content:"";
+	position:absolute;
+	top:50%;
+	margin-top:-9px;
+	right:1px;
+	left:auto;
+	width:1px;
+	height:1px;
+	border:8px solid transparent;
+	border-right:8px solid #9e9e9e;
+	display:block;
+}
+.availabilityMonth td.block_start:before
+,.noblockends .availabilityMonth td.availabilityDragASealed.block_start:before {
+	border:8px solid transparent;
+	border-left:8px solid #9e9e9e;
+	right:auto;
+	left:1px;
+	display:block;
+}
+.availabilityMonth td.block_start.availabilityDragASealed:before {
+	border-left:8px solid #fff;
+}
+.availabilityMonth td.block_end.availabilityDragBSealed:before {
+	border-right:8px solid #fff;
+}
+.availabilityDragBSealed.availabilityDragASealed:before
+,.availabilityDragBSealed.block_start:before
+,.availabilityDragBSealed.block_middle:before
+,.availabilityDragASealed.block_end:before
+,.availabilityDragASealed.block_middle:before
+,.noblockends .availabilityMonth td.availabilityDragBSealed:before
+,.noblockends .availabilityMonth td.availabilityDragASealed:before
+ {
+	display:none;
+}
+.availabilityMonth td.availabilityHighlight {
+	color:#fff;
+	background:#222;
+}
+.availabilityMonth td.greyDay {
+	color:#ccc;
+	background:#F4F4F4;
+}
+.bookingAvailabilityPriceLabel {
+	display:inline-block;
+	border-radius:3px;
+	background:#ccc;
+	padding:10px 10px 10px 23px;
+	position:relative;
+	font-size:14px;
+	font-weight:600;
+	cursor:pointer;
+	margin:0 5px;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.bookingAvailabilityTool.unavailable {
+	opacity:0.6;
+	cursor:default;
+}
+.bookingAvailabilityPriceLabel.selected:after,.bookingAvailabilityTool.selected:after {
+	content:"\2713";
+	position:absolute;
+	top:10px;
+	left:3px;
+	color:#fff;
+}
+.bookingAvailabilityPriceLabel.multi:after,.bookingAvailabilityTool.multi:after {
+	content:"-";
+	position:absolute;
+	top:7px;
+	left:6px;
+	color:#fff;
+	font-size:24px;
+}
+.bookingAvailabilityTool.selected:after {
+	color:#000;
+}
+.bookingAvailabilityPriceLabel.priceA {
+	background:#5FBFFF;
+	color:#fff;
+}
+.bookingAvailabilityPriceLabel.selected:before,.bookingAvailabilityTool.selected:before {
+	background:#fff;
+}
+.bookingAvailabilityPriceLabel.selected.priceA:after {
+	color:#5FBFFF;
+}
+.bookingAvailabilityPriceLabel.selected.priceB:after {
+	color:#6ED500;
+}
+.bookingAvailabilityPriceLabel.selected.priceC:after {
+	color:#FFBD44;
+}
+.bookingAvailabilityPriceLabel.selected.priceD:after {
+	color:#FF2B3B;
+}
+.bookingAvailabilityPriceLabel.selected.priceE:after {
+	color:#3E8550;
+}
+.bookingAvailabilityPriceLabel.selected.priceF:after {
+	color:#824FBC;
+}
+
+.bookingAvailabilityPriceLabel.priceB {
+	background:#6ED500;
+	color:#fff;
+}
+
+.availabilityMonth td.price-a:after
+,.availabilityMonth td.price-b:after
+,.availabilityMonth td.price-c:after
+,.availabilityMonth td.price-d:after
+,.availabilityMonth td.price-e:after
+,.availabilityMonth td.price-f:after
+,.availabilityMonth td.price-custom:after {
+	content:"";
+	width:10px;
+	height:10px;
+	position:absolute;
+	top:3px;
+	right:3px;
+	background:#5FBFFF;
+	border:1px solid #fff;
+	border-radius:10px;
+}
+.availabilityMonth td.availabilityDragBSealed.price-a:after
+,.availabilityMonth td.block_end.price-a:after
+,.availabilityMonth td.block_end.availabilityHighlight.availabilityDragBSealed.price-a:after
+,.availabilityMonth td.block_end.availabilityHighlight.availabilityDragB.price-a:after
+,.availabilityMonth td.block_end.availabilityHighlight.price-a:after
+
+,.availabilityMonth td.availabilityDragBSealed.price-b:after
+,.availabilityMonth td.block_end.price-b:after
+,.availabilityMonth td.block_end.availabilityHighlight.availabilityDragBSealed.price-b:after
+,.availabilityMonth td.block_end.availabilityHighlight.availabilityDragB.price-b:after
+,.availabilityMonth td.block_end.availabilityHighlight.price-b:after
+
+,.availabilityMonth td.availabilityDragBSealed.price-c:after
+,.availabilityMonth td.block_end.price-c:after
+,.availabilityMonth td.block_end.availabilityHighlight.availabilityDragBSealed.price-c:after
+,.availabilityMonth td.block_end.availabilityHighlight.availabilityDragB.price-c:after
+,.availabilityMonth td.block_end.availabilityHighlight.price-c:after
+
+,.availabilityMonth td.availabilityDragBSealed.price-d:after
+,.availabilityMonth td.block_end.price-d:after
+,.availabilityMonth td.block_end.availabilityHighlight.availabilityDragBSealed.price-d:after
+,.availabilityMonth td.block_end.availabilityHighlight.availabilityDragB.price-d:after
+,.availabilityMonth td.block_end.availabilityHighlight.price-d:after
+
+,.availabilityMonth td.availabilityDragBSealed.price-f:after
+,.availabilityMonth td.block_end.price-f:after
+,.availabilityMonth td.block_end.availabilityHighlight.availabilityDragBSealed.price-f:after
+,.availabilityMonth td.block_end.availabilityHighlight.availabilityDragB.price-f:after
+,.availabilityMonth td.block_end.availabilityHighlight.price-f:after
+
+,.availabilityMonth td.availabilityDragBSealed.price-e:after
+,.availabilityMonth td.block_end.price-e:after
+,.availabilityMonth td.block_end.availabilityHighlight.availabilityDragBSealed.price-e:after
+,.availabilityMonth td.block_end.availabilityHighlight.availabilityDragB.price-e:after
+,.availabilityMonth td.block_end.availabilityHighlight.price-e:after
+
+,.availabilityMonth td.availabilityDragBSealed.price-custom:after {
+	right:10px;
+}
+.availabilityMonth td.availabilityDragASealed.availabilityDragBSealed.price-a:after
+,.availabilityMonth td.availabilityDragASealed.availabilityDragBSealed.price-b:after
+,.availabilityMonth td.availabilityDragASealed.availabilityDragBSealed.price-c:after
+,.availabilityMonth td.availabilityDragASealed.availabilityDragBSealed.price-d:after
+,.availabilityMonth td.availabilityDragASealed.availabilityDragBSealed.price-e:after
+,.availabilityMonth td.availabilityDragASealed.availabilityDragBSealed.price-f:after
+,.availabilityMonth td.availabilityDragASealed.availabilityDragBSealed.price-custom:after
+,.availabilityMonth td.availabilityDragBSealed.block_start.price-a:after
+,.availabilityMonth td.availabilityDragBSealed.block_middle.price-a:after
+,.availabilityMonth td.availabilityDragBSealed.block_start.price-b:after
+,.availabilityMonth td.availabilityDragBSealed.block_middle.price-b:after
+,.availabilityMonth td.availabilityDragBSealed.block_start.price-c:after
+,.availabilityMonth td.availabilityDragBSealed.block_middle.price-c:after
+,.availabilityMonth td.availabilityDragBSealed.block_start.price-d:after
+,.availabilityMonth td.availabilityDragBSealed.block_middle.price-d:after
+,.availabilityMonth td.availabilityDragBSealed.block_start.price-e:after
+,.availabilityMonth td.availabilityDragBSealed.block_middle.price-e:after
+,.availabilityMonth td.availabilityDragBSealed.block_start.price-f:after
+,.availabilityMonth td.availabilityDragBSealed.block_middle.price-f:after
+
+ {
+	right:3px;
+}
+.availabilityMonth td.price-b:after {
+	background:#6ED500;
+}
+.availabilityMonth td.price-c:after {
+	background:#FFBD44;
+}
+.availabilityMonth td.price-d:after {
+	background:#FF2B3B;
+}
+.availabilityMonth td.price-e:after {
+	background:#3E8550;
+}
+.availabilityMonth td.price-f:after {
+	background:#824FBC;
+}
+
+.availabilityMonth td.price-custom:after {
+	background:#B31111;
+}
+.bookingAvailabilityPriceLabel.priceC {
+	background:#FFBD44;
+}
+.bookingAvailabilityPriceLabel.priceD {
+	background:#FF2B3B;
+	color:#fff;
+}
+.bookingAvailabilityPriceLabel.priceE {
+	background:#3E8550;
+	color:#fff;
+}
+.bookingAvailabilityPriceLabel.priceF {
+	background:#824FBC;
+	color:#fff;
+}
+.bookingAvailabilityPriceLabel.priceCustom {
+	background:#B31111;
+	color:#fff;
+}
+.bookingAvailabilityPriceLabel.selected.priceCustom:after {
+	color:#B31111;
+} 
+.bookingAvailabilityPriceLabel:before,.bookingAvailabilityTool:before {
+	content:"";
+	position:absolute;
+	background:rgba(255,255,255,0.6);
+	border-radius:3px;
+	top:11px;
+	left:3px;
+	width:14px;
+	height:14px;
+	float:left;
+}
+.bookingAvailabilityTool:before {
+	border:1px solid #fff;
+	width:12px;
+	height:12px;
+}
+.bookingAvailabilityPriceLabel input {
+	font-size:9px;
+	line-height:11px;
+	border:1px solid #000;
+	padding:1px;
+	border-radius:3px;
+	position:relative;
+	top:-1px;
+	width:30px;
+}
+.bookingAvailabilityTool {
+	display:inline-block;
+	border-radius:3px;
+	padding:10px 10px 10px 23px;
+	position:relative;
+	font-size:14px;
+	font-weight:600;
+	cursor:pointer;
+	color:#fff;
+	margin-left:20px;
+}
+#manageBookingAvailabilityRates {
+	display:none;
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background:rgba(100,100,100,0.8);
+}
+#addEditRate {
+	max-width:600px;
+	padding:20px;
+	background:#fff;
+	margin:0 auto;
+	box-shadow:2px 2px 3px rgba(0,0,0,0.5);
+}
+#addEditRate h3 {
+	margin:0 0 20px;
+	font-weight:normal;
+	font-size:18px;
+}
+#addEditRate .ratesField {
+	padding:10px 0;
+	clear:both;
+}
+#addEditRate .ratesField input{
+	border:1px solid #888;
+	padding:5px 10px;
+	border-radius:4px;
+	font-size:14px;
+	width:180px;
+	float:left;
+}
+#addEditRate label {
+	display:block;
+	font-size:11px;
+	margin:0;
+}
+#addEditRate .info {
+	font-size:11px;
+	margin:0;
+	margin-left:220px;
+	color:#222;
+
+}
+#saveEditRate,#cancelEditRate {
+	float:right;
+	padding:10px 15px;
+	background:#0091cc;
+	color:#fff;
+	font-size:14px;
+	line-height:18px;
+	cursor:pointer;
+	border-radius:4px;
+	margin-left:20px;
+}
+#addEditRate .hr {
+	margin:20px 0;
+	border-top:1px solid #ccc;
+	clear:both;
+}
+#cancelEditRate {
+	background:none;
+	color:#444;
+	font-size:12px;
+	text-decoration:underline;
+}
+#noRatesMessage {
+	padding:5px 10px;
+	font-size:12px;
+	text-align:center;
+	color:#333;
+	background:#FDE9AB;
+	margin:-20px -20px 20px;
+	font-weight:normal;
+}
+@media (min-width:901px) {
+	.availabilityMonth {
+		width:24%;
+		margin:0 0.65%;
+		height:33.33%;
+	}
+	.availabilityMonth#availabilityMonth1
+	,.availabilityMonth#availabilityMonth5
+	,.availabilityMonth#availabilityMonth9 {
+		margin-left:0;
+	}
+	.availabilityMonth#availabilityMonth4
+	,.availabilityMonth#availabilityMonth8
+	,.availabilityMonth#availabilityMonth12 {
+		margin-right:0;
+	}
+	
+	#bookings .availabilityMonth {
+		height:auto;
+		width:32%;
+		margin:0 1%;
+	}
+
+	#bookings .availabilityMonth#availabilityMonth1
+	,#bookings .availabilityMonth#availabilityMonth4
+	,#bookings .availabilityMonth#availabilityMonth7
+	,#bookings .availabilityMonth#availabilityMonth10 {
+		margin-left:0;
+	}
+	#bookings .availabilityMonth#availabilityMonth3
+	,#bookings .availabilityMonth#availabilityMonth6
+	,#bookings .availabilityMonth#availabilityMonth9
+	,#bookings .availabilityMonth#availabilityMonth12 {
+		margin-right:0;
+	}
+	
+}
+@media (max-width:900px) and (min-width:700px) {
+	.availabilityMonth {
+		height:auto;
+		width:32%;
+		margin:0 1%;
+	}
+
+	.availabilityMonth#availabilityMonth1
+	,.availabilityMonth#availabilityMonth4
+	,.availabilityMonth#availabilityMonth7
+	,.availabilityMonth#availabilityMonth10 {
+		margin-left:0;
+	}
+	.availabilityMonth#availabilityMonth3
+	,.availabilityMonth#availabilityMonth6
+	,.availabilityMonth#availabilityMonth9
+	,.availabilityMonth#availabilityMonth12 {
+		margin-right:0;
+	}
+}
+@media (max-width:699px) and (min-width:400px) {
+	.availabilityMonth {
+		height:auto;
+		width:49%;
+		margin:0 1%;
+	}
+	.availabilityMonth#availabilityMonth1
+	,.availabilityMonth#availabilityMonth3
+	,.availabilityMonth#availabilityMonth5
+	,.availabilityMonth#availabilityMonth7
+	,.availabilityMonth#availabilityMonth9
+	,.availabilityMonth#availabilityMonth11 {
+		margin-left:0;
+	}
+	.availabilityMonth#availabilityMonth2
+	,.availabilityMonth#availabilityMonth4
+	,.availabilityMonth#availabilityMonth6
+	,.availabilityMonth#availabilityMonth8
+	,.availabilityMonth#availabilityMonth10
+	,.availabilityMonth#availabilityMonth12 {
+		margin-right:0;
+	}
+}
+@media (max-width:1600px) {
+	.availabilityMonth td.price-a:after
+	,.availabilityMonth td.price-b:after
+	,.availabilityMonth td.price-c:after
+	,.availabilityMonth td.price-d:after
+	,.availabilityMonth td.price-e:after
+	,.availabilityMonth td.price-f:after
+	,.availabilityMonth td.price-custom:after {
+		float:right;
+		position:relative;
+		top:0;
+		right:0;
+	}
+}
+@media (max-width:399px) {
+	.availabilityMonth {
+		height:auto;
+		width:100%;
+		margin:0;
+	}
+	.availabilityMonth{
+		margin-left:0;
+		margin-right:0;
+	}
+	#bookingAvailabilityToolbarInner {
+		float:left;
+		width:480px;
+	}
+	
+}
+@media (max-width:699px) {
+	
+	.bookingAvailabilityPriceLabel,.bookingAvailabilityTool {
+		font-size:10px;
+	}
+	#bookingAvailabilityInner h1 {
+		margin:50px 0 0;	
+		padding-top:10px;
+		border-bottom:1px solid #ccc;
+		clear:both;		
+	}
+	#bookingAvailabilityInner {
+		padding-top:120px;
+	}
+	#bookingAvailabilityTitleBar {
+		top:10px;
+	}
+
+}
+@media (max-height:728px) {
+	.availabilityMonth {
+		height:auto;
+	}
+}

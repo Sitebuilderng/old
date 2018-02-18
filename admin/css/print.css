@@ -1,0 +1,43 @@
+#dragBoundry {
+	right:0;
+	bottom: auto !important;
+	overflow: visible !important;
+	position: relative !important;
+}
+#livepreview {
+	display: none !important;
+}
+#cancelOrderPopdown {
+	display: none !important;
+}
+#bookingsLeft {
+	display:none;
+}
+#bookingsRight {
+	width:100%;
+	background:white;
+	float:none;
+}
+#printTitle {
+	display:block;
+	text-align:center;
+}
+#bookingsTabs {
+	display: none;
+}
+.darkMenuMessage,.order .pricesItem,.orderInfo .orderInfoLeft {
+	color: #333;
+}
+.scrollWrapper {
+	height:auto !important;
+	width:100% !important;
+	overflow: visible !important;
+	right: auto !important;
+	bottom:auto !important;
+}
+.lovelyScrollContents {
+	position: relative !important;
+	top:auto !important;
+	left:auto !important;
+	right:auto !important;
+}

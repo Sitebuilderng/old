@@ -1,0 +1,1 @@
+This folder is deliberately empty in the download archive. It does still need to be uploaded to your server though. This file is here to prevent some zip extractors from ignoring an empty folder. This file can be deleted once you've uploaded everything to your server. 

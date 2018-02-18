@@ -1,0 +1,41 @@
+/* Recent blogs */
+.recent_blog_articles {
+	margin-left: 0;
+}
+.recent_blog_articles li p a,.recent_blog_articles li a,.recent_blog_articles a:hover {
+	border:none;
+}
+.recent_blog_articles li {
+	font-size:12px;
+	margin-bottom:10px;
+}
+.recent_blog_articles.narrow li .blog_article_thumb {
+	width:50px;
+}
+.recent_blog_articles li .blog_article_thumb img {
+	width:100%;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;	
+	
+}
+.recent_blog_articles li .blog_article_thumb {
+	float:left;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;	
+	margin:0 10px 0px 0;
+	width:100px;
+}
+.recent_blog_articles li.withThumb p{
+	margin-left:110px;
+	margin-bottom:0;
+	margin-top:0;	
+}
+.recent_blog_articles.narrow li.withThumb p{
+	margin-left:60px;
+}
+.blog_date {
+	color:#555;
+	font-size:10px;
+}

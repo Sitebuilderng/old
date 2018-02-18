@@ -1,0 +1,56 @@
+
+/* Social links */
+.social_links {
+	margin-top:20px;
+}
+.social_links ul {
+	list-style:none;
+	margin-left:0;
+}
+.social_links li {
+	float:left;
+}
+#footerWrap .social_links  {
+	text-align:right;
+}
+.social_links li a,.social_links li a:hover {
+	font-weight: normal;
+	display:inline-block;
+	border: none;
+	overflow:hidden;
+	width:45px;
+	height:45px;
+	line-height:200px;
+}
+.social_links li.facebook_link a {
+	background:url("../graphics/social-med-facebook.png") no-repeat 0 0;
+}
+.social_links li.twitter_link a {
+	background:url("../graphics/social-med-twitter.png") no-repeat 0 0;
+}
+.social_links li.gplus_link a {
+	background:url("../graphics/social-med-gplus.png") no-repeat 0 0;
+}
+.social_links li.youtube_link a {
+	background:url("../graphics/social-med-youtube.png") no-repeat 0 0;
+}
+.social_links li.vimeo_link a {
+	background:url("../graphics/social-med-vimeo.png") no-repeat 0 0;
+}
+.social_links li.pinterest_link a {
+	background:url("../graphics/social-med-pinterest.png") no-repeat 0 0;
+}
+.social_links li.linkedin_link a {
+	background:url("../graphics/social-med-linkedin.png") no-repeat 0 0;
+}
+@media only screen and (min-width: 768px) and (max-width: 1000px) {
+	.social_links {
+		width: 120px;
+	}
+	.social_links li.facebook_link a,.social_links li.gplus_link a,.social_links li.linkedin_link a {
+		margin: 0 0 2px 6px !important;
+	}
+	.social_links li.twitter_link a {
+		margin: 0 3px 2px 6px !important;
+	}
+}
