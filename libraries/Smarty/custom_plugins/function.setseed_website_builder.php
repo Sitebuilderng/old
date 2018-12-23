@@ -197,11 +197,11 @@ function smarty_function_setseed_website_builder($params, &$smarty)
 	}
 	//$paystack;
 	if($dev){
-		$paystack['secret_key'] = 'sk_test_dc2024ce39f1d9f6e02413f1d771c5935d8a160f';
-		$paystack['public_key'] = 'pk_test_c9fef17315c3335198bd7a99569fdac8b1befa54';
+		$paystack['secret_key'] = 'XXX';
+		$paystack['public_key'] = 'XXX';
 	}else{
-		$paystack['secret_key'] = 'sk_live_de9dc875168fb5e82b1940817b5056aa23479c60';
-		$paystack['public_key'] = 'pk_live_80aae9eb5855bc6483d1f989a59e5847f1397e71';
+		$paystack['secret_key'] = 'XXX';
+		$paystack['public_key'] = 'XXX';
 	}
 
 	// From settings for outbound emails
